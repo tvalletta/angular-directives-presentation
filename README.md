@@ -1,4 +1,3 @@
-angular-directives-presentation
-===============================
+Angular Directives Presentation
+=====================================
 
-Angular Directives: A Deep Dive 

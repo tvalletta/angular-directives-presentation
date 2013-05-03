@@ -1,0 +1,21 @@
+<html ng-app>
+	<head>
+		<title>Angular Example 3</title>
+		<script src="js/lib/angular.min.js"></script>
+		<script src="js/example-ctrl-3.js"></script>
+	</head>
+	<body ng-controller="Ctrl3">
+	 
+		<table>
+			<tr>
+				<th>Part</th>
+				<th>Supplier</th>
+			</tr>
+			<tr ng-repeat="part in parts">
+				<td>{{ part.part }}</td>
+				<td>{{ part.supplier }}</td>
+			</tr>
+		</table>
+	 
+	</body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Random</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="author" content="Thomas A. Valletta" />
+        <link href="css/impress.css" rel="stylesheet" />
+        <link href="css/prettify.css" rel="stylesheet" />
+        <script type="text/javascript" src='js/jquery-1.8.2.min.js'></script>
+        <script type="text/javascript" src='js/prettify.js'></script>
+    </head>
+    <body onload='prettyPrint()'>
+		<p class="fallback-message">
+		    Your browser doesn't support impress.js.  Try Chrome or Safari.
+		</p>
+		<div class="help">
+			<h3>Need Help?</h3>
+			<h6>Use the arrow keys move forward and back.</h6>
+		</div>
+		<div id="impress">
+			<div id="title" class="step" data-x="0" data-y="-1200" data-z="0">
+			    <img src="img/AngularJS-large.png"/>
+			</div>
+
+			<!-- Outline -->
+			<div id="outline" class="step" data-x="0" data-y="-50" data-z="0">
+				<h1>Outline</h1>
+			</div>
+			<div class="step" data-x="50" data-y="80" data-z="-100">
+				<h4>Simple</h4>
+			</div>
+			<div class="step" data-x="50" data-y="160" data-z="-100">
+				<h4>Example</h4>
+			</div>
+			<div class="step" data-x="50" data-y="240" data-z="-100">
+				<h4>Directives</h4>
+			</div>
+			<div class="step" data-x="50" data-y="320" data-z="-100">
+				<h4>Compile Function</h4>
+			</div>
+			<div class="step" data-x="50" data-y="400" data-z="-100">
+				<h4>Transclusion</h4>
+			</div>
+
+
+			<div id="mobile" class="step" data-x="1000" data-y="-50" data-z="0">
+				<h1>Mobile</h1>
+			</div>
+
+ 			<div class="step invisible center" data-x="2600" data-y="-650" data-z="3000" data-rotate-x="0" data-rotate-y="0" data-rotate-z="360" data-scale="6">
+			    <h4>tom@vallettas.com</h4>
+			    <h4>@tvalletta</h4>
+			</div>
+
+			<div class="step clarify" data-x="-3500" data-y="-1150" data-z="-2500">
+			    <img src="img/sunray-grad.svg" style="width: 1000%; height: 1000%; opacity: 0.25; "/>
+			</div>
+			<div class="step clarify" data-x="-950" data-y="-1200" data-z="-700">
+			    <img src="img/cloud-02b.svg" style="width: 250%; height: 250%; "/>
+			</div>
+			<div class="step clarify" data-x="-350" data-y="-1000" data-z="-100">
+			    <img src="img/cloud-03b.svg" style="width: 140%; height: 140%"/>
+			</div>
+			<div class="step center clarify" data-x="-200" data-y="-900" data-z="-100">
+			    <h3>
+			    	<span style="color: #77CBF8; font-weight: bold;">Directives:</span>
+			     	<span style="color: #000">A Deep Dive</span></h3>
+			    <p style="font-size: 22px">Thomas A. Valletta - @tvalletta</p>
+			</div>
+
+			<div class="step clarify" data-x="-120" data-y="-75" data-z="-1">
+				<img src="img/cloud-01b.svg" style="width: 90%; height: 90%"/>
+			</div>
+		</div>
+    <script type="text/javascript" src="js/impress.js"></script>
+    <script>
+    	var el = document.getElementById("impress");
+    	impress().init();
+
+    	var timer;
+    	var focusList = [];
+    	var $help = $('.help');
+    	var activeGroup;
+
+    	el.addEventListener("impress:stepenter", function (event) {
+    		setTimeout(function() {
+	    		var $evt = $(event.target);
+	    		var focus = $evt.attr('data-focus');
+	    		if (focus) {
+	    			var $target = $('.focus[data-focus-id="' + focus + '"]');
+	    			if ($target[0]) {
+		    			$target.addClass('clarify');
+		    			focusList.push($target);
+	    			}
+	    		}
+	    		var onenter = $evt.attr('data-onenter');
+	    		if (window[onenter]) window[onenter]();
+    		}, 200);
+        }, false);
+
+    	el.addEventListener("impress:stepleave", function (event) {
+    		setTimeout(function() {
+	    		var $evt = $(event.target);
+	    		
+	    		var stay = $evt.attr('data-stay');
+	    		if (stay) {
+	    			$evt.addClass('stay');
+	    		}
+
+	    		// Group Stuff
+	    		var group = $evt.attr('data-group');
+	    		if (group) {
+		    		if (activeGroup) {
+		    			if (activeGroup === group) {
+		    				$evt.addClass('stay');
+		    			}
+		    			else {
+		    				$('[data-group="' + activeGroup + '"]').removeClass('stay');
+		    			}
+		    		}
+		    		else {
+		    			activeGroup = group;
+		    			$evt.addClass('stay');
+		    		}
+	    		}
+	    		else if (activeGroup) {
+					$('[data-group="' + activeGroup + '"]').removeClass('stay')
+	    		}
+
+	    		for (var i = 0, cnt = focusList.length; i < cnt; i++) {
+	    			focusList[i].removeClass('clarify');
+	    		}
+	    		focusList = [];
+
+	    		var onleave = $evt.attr('data-onleave');
+	    		if (window[onleave]) window[onleave]();
+	    	}, 200);
+        }, false);
+
+    	function onGuidedEnter() {
+    		timer = setTimeout(function() {
+	    		$help.addClass('show');
+    		}, 3000);
+    	}
+    	function onGuidedLeave() {
+    		clearTimeout(timer);
+			$help.removeClass('show');
+    	}
+
+    </script>
+    </body>
+</html>
