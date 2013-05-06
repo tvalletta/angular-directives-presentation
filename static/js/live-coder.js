@@ -26,7 +26,27 @@ angular.module('solar', [])
 			replace: true,
 			template: '<div style="border: 1px solid black; width: 300px; height: 300px"></div>',
 			link: function(scope, el, attrs) {
-				var output = 'abcdefghijklmnopqrstuvwxyz';
+				var output = "function Ctrl2($scope) {\
+					$scope.parts = [\
+						{\
+							part: 'panel',\
+							supplier: 'Suntech'\
+						},\
+						{\
+							part: 'panel',\
+							supplier: 'Yingli'\
+						},\
+						{\
+							part: 'panel',\
+							supplier: 'First Solar'\
+						},\
+						{\
+							part: 'inverter',\
+							supplier: 'Enphase'\
+						}\
+					];\
+				}\
+				";
 				var oIndex = 0;
 
 				function keyPressHandler(evt) {
