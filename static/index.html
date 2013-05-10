@@ -6,6 +6,7 @@
         <meta name="author" content="Thomas A. Valletta" />
         <link href="css/impress.css" rel="stylesheet" />
         <link href="css/prettify.css" rel="stylesheet" />
+        <link href="css/presentation.css" rel="stylesheet" />
         <script type="text/javascript" src='js/jquery-1.8.2.min.js'></script>
         <script type="text/javascript" src='js/prettify.js'></script>
     </head>
@@ -22,34 +23,711 @@
 			    <img src="img/AngularJS-large.png"/>
 			</div>
 
-			<!-- Outline -->
-			<div id="outline" class="step" data-x="0" data-y="-50" data-z="0">
-				<h1>Outline</h1>
+			<div class="step quote" data-x="50" data-y="80" data-z="-100">
+				Bringing “simple” back to the development of complex webapps...
 			</div>
-			<div class="step" data-x="50" data-y="80" data-z="-100">
-				<h4>Simple</h4>
+
+			<!-- Examples -->
+			<div class="step" data-x="-550" data-y="1200" data-z="-100" data-rotate-y="-60">
+				<h2>View:</h2>
+				<h4>Expression Evaluation</h4>
 			</div>
-			<div class="step" data-x="50" data-y="160" data-z="-100">
-				<h4>Example</h4>
+			<div class="step" data-x="50" data-y="1200" data-z="-100">
+<pre class='prettyprint lang-html'>
+&lt;html ng-app&gt;
+	&lt;head&gt;
+		&lt;title&gt;Angular Example 1&lt;/title&gt;
+
+		&lt;script src="js/lib/angular.min.js"&gt;&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	 
+		&lt;p&gt;Hello, {{ "Angular" + "!" }}&lt;/p&gt;
+	 
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre>			
 			</div>
-			<div class="step" data-x="50" data-y="240" data-z="-100">
-				<h4>Directives</h4>
+			
+			<div class="step" data-x="-550" data-y="2400" data-z="-100" data-rotate-y="-60">
+				<h2>Controller:</h2>
+				<h4>Data Driven View</h4>
 			</div>
-			<div class="step" data-x="50" data-y="320" data-z="-100">
-				<h4>Compile Function</h4>
+			<div class="step" data-x="50" data-y="2400" data-z="-100">
+<pre class='prettyprint lang-html'>
+&lt;html ng-app&gt;
+	&lt;head&gt;
+		&lt;title&gt;Angular Example 2&lt;/title&gt;
+		&lt;script src="js/lib/angular.min.js"&gt;&lt;/script&gt;
+		&lt;script src="js/example-ctrl-2.js"&gt;&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body ng-controller="Ctrl2"&gt;
+	 
+		&lt;p&gt;Number of parts: {{ parts.length }}&lt;/p&gt;
+	 
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre>			
 			</div>
-			<div class="step" data-x="50" data-y="400" data-z="-100">
+
+			<div class="step" data-x="850" data-y="2400" data-z="-100">
+<pre class='prettyprint lang-js'>
+function Ctrl2($scope) {
+	$scope.parts = [
+		{
+			part: 'panel',
+			supplier: 'Suntech'
+		},
+		{
+			part: 'panel',
+			supplier: 'Yingli'
+		},
+		{
+			part: 'panel',
+			supplier: 'First Solar'
+		},
+		{
+			part: 'inverter',
+			supplier: 'Enphase'
+		}
+	];
+}
+</pre>
+			</div>
+			
+			<div class="step" data-x="-550" data-y="3600" data-z="-100" data-rotate-y="-60">
+				<h2>Directive:</h2>
+				<h4>ng-repeat</h4>
+			</div>
+			<div class="step" data-x="50" data-y="3600" data-z="-100">
+<pre class='prettyprint lang-html'>
+&lt;html ng-app&gt;
+	&lt;head&gt;
+		&lt;title&gt;Angular Example 3&lt;/title&gt;
+		&lt;script src="js/lib/angular.min.js"&gt;&lt;/script&gt;
+		&lt;script src="js/example-ctrl-3.js"&gt;&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body ng-controller="Ctrl3"&gt;
+	 
+		&lt;table&gt;
+			&lt;tr&gt;
+				&lt;th&gt;Part&lt;/th&gt;
+				&lt;th&gt;Supplier&lt;/th&gt;
+			&lt;/tr&gt;
+			&lt;tr ng-repeat="part in parts"&gt;
+				&lt;td&gt;{{ part.part }}&lt;/td&gt;
+				&lt;td&gt;{{ part.supplier }}&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/table&gt;
+	 
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre>			
+			</div>
+
+			<div class="step" data-x="850" data-y="3600" data-z="-100">
+<pre class='prettyprint lang-js'>
+function Ctrl3($scope) {
+	$scope.parts = [
+		{
+			part: 'panel',
+			supplier: 'Suntech'
+		},
+		{
+			part: 'panel',
+			supplier: 'Yingli'
+		},
+		{
+			part: 'panel',
+			supplier: 'First Solar'
+		},
+		{
+			part: 'inverter',
+			supplier: 'Enphase'
+		}
+	];
+}
+</pre>
+			</div>
+
+			<!-- EXAMPLE 4 -->			
+			<div class="step" data-x="-550" data-y="4800" data-z="-100" data-rotate-y="-60">
+				<h2>Directive:</h2>
+				<h4>Easy As Pie</h4>
+			</div>
+			<div class="step" data-x="50" data-y="4800" data-z="-100">
+<pre class='prettyprint lang-html'>
+&lt;html ng-app="solar"&gt;
+	&lt;head&gt;
+		&lt;title&gt;Angular Example 4&lt;/title&gt;
+		&lt;script src="js/lib/angular.min.js"&gt;&lt;/script&gt;
+		&lt;script src="js/example-ctrl-4.js"&gt;&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body ng-controller="Ctrl4"&gt;
+	 
+		&lt;ul&gt;
+			&lt;li ng-repeat="part in parts"&gt;
+				&lt;img part="part"/&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	 
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre>			
+			</div>
+
+			<div class="step" data-x="850" data-y="4800" data-z="-100">
+<pre class='prettyprint lang-js'>
+function Ctrl4($scope) {
+	$scope.parts = [
+		{
+			part: 'panel',
+			supplier: 'Suntech'
+		},
+		{
+			part: 'panel',
+			supplier: 'Yingli'
+		},
+		{
+			part: 'panel',
+			supplier: 'First Solar'
+		},
+		{
+			part: 'inverter',
+			supplier: 'Enphase'
+		}
+	];
+}
+</pre>
+			</div>
+			
+			<div class="step" data-x="1650" data-y="4800" data-z="-100">
+<pre class='prettyprint lang-js'>
+angular.module('solar', [])
+	.directive('part', function() {
+		return function(scope, el, attrs) {
+			var part = scope.$eval(attrs.part);
+			el[0].src = 'img/' + part.part + '/' + part.supplier + '.svg';
+		}
+	});
+</pre>
+			</div>
+
+			<!-- Simple Directive Layout -->
+			<div id="example-4-layout" class="step clarify" data-x="2400" data-y="4800" data-z="1300" data-rotate-y="-90"></div>
+
+			<div id="example-4-module-box" class="step clarify" data-x="2400" data-y="4800" data-z="1000" data-scale=".5" data-rotate-y="-90">
+				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+				<div class="box">
+					<h3 class="center">Module</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">name</div>
+						<div class="meta">@return</div>
+						<div class="code">object: module</div>
+					</span>
+					<hr noshade/>
+					<span class="small">
+						<div class="code">directive(name, fn)</div>
+						<div class="code">...</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-4-directive-box" class="step clarify" data-x="2400" data-y="4800" data-z="1300" data-scale=".5" data-rotate-y="-90">
+				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+				<div class="box">
+					<h3 class="center">Directive</h3>
+					<hr noshade/>
+					<span class="med">
+						<div class="meta">@param</div>
+						<div class="code">&lt;injectables&gt;</div>
+						<div class="meta">@return</div>
+						<div class="code">function: Link</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-4-link-box" class="step clarify" data-x="2400" data-y="4800" data-z="1600" data-scale=".5" data-rotate-y="-90">
+				<div class="box">
+					<h3 class="center">Link Function</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">scope</div>
+						<div class="code">element</div>
+						<div class="code">attributes</div>
+						<div class="code">controller</div>
+					</span>
+				</div>
+			</div>
+			
+			<!-- EXAMPLE 5 -->			
+			<div class="step" data-x="-550" data-y="6000" data-z="-100" data-rotate-y="-60">
+				<h2>Directive:</h2>
+				<h4>Two Way Binding</h4>
+			</div>
+			<div class="step" data-x="50" data-y="6000" data-z="-100">
+<pre class='prettyprint lang-html'>
+&lt;html ng-app="solar"&gt;
+	&lt;head&gt;
+		&lt;title&gt;Angular Example 5&lt;/title&gt;
+		&lt;script src="js/lib/angular.min.js"&gt;&lt;/script&gt;
+		&lt;script src="js/example-ctrl-5.js"&gt;&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body ng-controller="Ctrl5"&gt;
+	 
+		&lt;ul&gt;
+			&lt;li ng-repeat="part in parts"&gt;
+				&lt;img part="part"/&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	 
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre>			
+			</div>
+
+			<div class="step" data-x="850" data-y="6000" data-z="-100">
+<pre class='prettyprint lang-js'>
+function Ctrl5($scope) {
+	$scope.parts = [
+		{
+			part: 'panel',
+			supplier: 'Suntech'
+		},
+		{
+			part: 'panel',
+			supplier: 'Yingli'
+		},
+		{
+			part: 'panel',
+			supplier: 'First Solar'
+		},
+		{
+			part: 'inverter',
+			supplier: 'Enphase'
+		}
+	];
+}
+</pre>
+			</div>
+			
+			<div class="step" data-x="1650" data-y="6000" data-z="-100">
+<pre class='prettyprint lang-js'>
+angular.module('solar', [])
+	.directive('part', function() {
+		return function(scope, el, attrs) {
+			function updateSrc(value) {
+				el[0].src = 'img/' + value.part + '/' + value.supplier + '.svg';
+			}
+
+			scope.$watch(attrs.part, function(value) {
+				updateSrc(value);
+			});
+		}
+	});
+</pre>
+			</div>
+
+			<!-- Simple Directive Layout -->
+			<div id="example-5-layout" class="step clarify" data-x="2400" data-y="6000" data-z="1300" data-rotate-y="-90"></div>
+
+			<div id="example-5-module-box" class="step clarify" data-x="2400" data-y="6000" data-z="1000" data-scale=".4" data-rotate-y="-90">
+				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+				<div class="box">
+					<h3 class="center">Module</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">name</div>
+						<div class="meta">@return</div>
+						<div class="code">object: module</div>
+					</span>
+					<hr noshade/>
+					<span class="small">
+						<div class="code">directive(name, fn)</div>
+						<div class="code">...</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-5-directive-box" class="step clarify" data-x="2400" data-y="6000" data-z="1200" data-scale=".4" data-rotate-y="-90">
+				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+				<div class="box">
+					<h3 class="center">Directive</h3>
+					<hr noshade/>
+					<span class="med">
+						<div class="meta">@param</div>
+						<div class="code">&lt;injectables&gt;</div>
+						<div class="meta">@return</div>
+						<div class="code">function: Link</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-5-link-box" class="step clarify" data-x="2400" data-y="6000" data-z="1400" data-scale=".4" data-rotate-y="-90">
+				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+				<div class="box">
+					<h3 class="center">Link Fn</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">scope</div>
+						<div class="code">element</div>
+						<div class="code">attributes</div>
+						<div class="code">controller</div>
+					</span>
+					<hr noshade/>
+					<span class="small">
+						<div class="code">$scope.$watch(attr, fn)</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-5-watch-box" class="step clarify" data-x="2400" data-y="6000" data-z="1600" data-scale=".4" data-rotate-y="-90">
+				<div class="box">
+					<h3 class="center">Watch Fn</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">value</div>
+					</span>
+				</div>
+			</div>
+			
+			<!-- EXAMPLE 6 -->	
+			<div class="step" data-x="-550" data-y="7200" data-z="-100" data-rotate-y="-60">
+				<h2>Directive:</h2>
+				<h4>Custom Element Tag</h4>
+			</div>
+
+			<div class="step" data-x="50" data-y="7200" data-z="-100">
+<pre class='prettyprint lang-html'>
+&lt;html ng-app="solar"&gt;
+	&lt;head&gt;
+		&lt;title&gt;Angular Example 6&lt;/title&gt;
+		&lt;script src="js/lib/angular.min.js"&gt;&lt;/script&gt;
+		&lt;script src="js/example-ctrl-6.js"&gt;&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body ng-controller="Ctrl6"&gt;
+	 
+		&lt;ul&gt;
+			&lt;li ng-repeat="part in parts"&gt;
+				&lt;party part="part"/&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	 
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre>			
+			</div>
+
+			<div class="step" data-x="850" data-y="7200" data-z="-100">
+<pre class='prettyprint lang-js'>
+function Ctrl6($scope) {
+	$scope.parts = [
+		{
+			part: 'panel',
+			supplier: 'Suntech'
+		},
+		{
+			part: 'panel',
+			supplier: 'Yingli'
+		},
+		{
+			part: 'panel',
+			supplier: 'First Solar'
+		},
+		{
+			part: 'inverter',
+			supplier: 'Enphase'
+		}
+	];
+}
+</pre>
+			</div>
+			
+			<div class="step" data-x="1650" data-y="7200" data-z="-100">
+<pre class='prettyprint lang-js'>
+angular.module('solar', [])
+	.directive('party', function() {
+		var directiveDef = {
+			restrict: 'E',
+			replace: true,
+			template: '&lt;img/&gt;',
+			link: function(scope, el, attrs) {
+				function updateSrc(value) {
+					el[0].src = 'img/' + value.part + '/' + value.supplier + '.svg';
+				}
+				scope.$watch(attrs.part, function(value) {
+					updateSrc(value);
+				});
+			}
+		}
+		return directiveDef;
+	});
+</pre>
+			</div>
+
+			<!-- Simple Directive Layout -->
+			<div id="example-6-layout" class="step clarify" data-x="2400" data-y="7200" data-z="1300" data-rotate-y="-90"></div>
+
+			<div id="example-6-module-box" class="step clarify" data-x="2400" data-y="7200" data-z="950" data-scale=".3" data-rotate-y="-90">
+				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+				<div class="box">
+					<h3 class="center">Module</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">name</div>
+						<div class="meta">@return</div>
+						<div class="code">object: module</div>
+					</span>
+					<hr noshade/>
+					<span class="small">
+						<div class="code">directive(name, fn)</div>
+						<div class="code">...</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-6-directive-box" class="step clarify" data-x="2400" data-y="7200" data-z="1120" data-scale=".3" data-rotate-y="-90">
+				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+				<div class="box">
+					<h3 class="center">Directive</h3>
+					<hr noshade/>
+					<span class="med">
+						<div class="meta">@param</div>
+						<div class="code">&lt;injectables&gt;</div>
+						<div class="meta">@return</div>
+						<div class="code">object: Dir Def</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-6-ddef-box" class="step clarify" data-x="2400" data-y="7200" data-z="1290" data-scale=".3" data-rotate-y="-90">
+				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+				<div class="box">
+					<h3 class="center">Dir Def</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="code">restrict: 'E'</div>
+						<div class="code">replace: true</div>
+						<div class="code">template: '&lt;div/&gt;'</div>
+						<div class="code">link: fn</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-6-link-box" class="step clarify" data-x="2400" data-y="7200" data-z="1460" data-scale=".3" data-rotate-y="-90">
+				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+				<div class="box">
+					<h3 class="center">Link Fn</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">scope</div>
+						<div class="code">element</div>
+						<div class="code">attributes</div>
+						<div class="code">controller</div>
+					</span>
+					<hr noshade/>
+					<span class="small">
+						<div class="code">$scope.$watch(attr, fn)</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-6-watch-box" class="step clarify" data-x="2400" data-y="7200" data-z="1630" data-scale=".3" data-rotate-y="-90">
+				<div class="box">
+					<h3 class="center">Watch Fn</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">value</div>
+					</span>
+				</div>
+			</div>
+			
+			<!-- EXAMPLE 7 -->	
+			<div class="step" data-x="-550" data-y="8400" data-z="-100" data-rotate-y="-60">
+				<h2>Directive:</h2>
 				<h4>Transclusion</h4>
 			</div>
 
-
-			<div id="mobile" class="step" data-x="1000" data-y="-50" data-z="0">
-				<h1>Mobile</h1>
+			<div class="step" data-x="50" data-y="8400" data-z="-100">
+<pre class='prettyprint lang-html'>
+&lt;html ng-app="solar"&gt;
+	&lt;head&gt;
+		&lt;title&gt;Angular Example 7&lt;/title&gt;
+        &lt;link href="css/example-7.css" rel="stylesheet" /&gt;
+		&lt;script src="js/lib/angular.min.js"&gt;&lt;/script&gt;
+		&lt;script src="js/example-ctrl-7.js"&gt;&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body ng-controller="Ctrl7"&gt;
+	 
+		&lt;solararray height="26" width="36"&gt;
+			&lt;panel part="part"/&gt;
+		&lt;/solararray&gt;
+	 
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre>			
 			</div>
 
- 			<div class="step invisible center" data-x="2600" data-y="-650" data-z="3000" data-rotate-x="0" data-rotate-y="0" data-rotate-z="360" data-scale="6">
-			    <h4>tom@vallettas.com</h4>
-			    <h4>@tvalletta</h4>
+			<div class="step" data-x="850" data-y="8400" data-z="-100">
+<pre class='prettyprint lang-js'>
+function Ctrl7($scope, parts) {
+	$scope.part = parts[2];
+}
+</pre>
+			</div>
+			
+			<div class="step" data-x="1650" data-y="8400" data-z="-100">
+<pre class='prettyprint lang-js x-small'>
+	.factory('parts', function() {
+		return [
+			{
+				part: 'panel',
+				supplier: 'Suntech',
+				dimensions: {
+					height: 5,
+					width: 3
+				}
+			},
+			{
+				part: 'panel',
+				supplier: 'Yingli',
+				dimensions: {
+					height: 3,
+					width: 5
+				}
+			},
+			{
+				part: 'panel',
+				supplier: 'First Solar',
+				dimensions: {
+					height: 4,
+					width: 8
+				}
+			}
+		];
+	})
+</pre>
+			</div>
+			
+			<div class="step" data-x="2450" data-y="8400" data-z="-100">
+<pre class='prettyprint lang-js x-small'>
+	.directive('panel', ['$timeout', 'parts', function($timeout, parts) {
+		var directiveDef = {
+			restrict: 'E',
+			replace: true,
+			template: '&lt;div class="panel"/&gt;',
+			link: function($scope, el, attrs) {
+				$scope.$watch(attrs.part, function(value) {
+					$scope.part = value;
+					$scope.$emit('panel:value-change');
+				});
+				$scope.$on('array:panel-layout', function(e, layout) {
+					el.css('height', (layout.dimensions.height * layout.scale) + 'px');
+					el.css('width', (layout.dimensions.width * layout.scale) + 'px');
+					el.addClass('panel');
+				});
+			}
+		}
+		return directiveDef;
+	}]);
+</pre>
+			</div>
+			
+			<div class="step" data-x="3650" data-y="8400" data-z="-100">
+<pre class='prettyprint lang-js xxx-small'>
+	.directive('solararray', function() {
+		var directiveDef = {
+
+			restrict: 'E',
+			replace: true,
+			template: '<div class="array"/>',
+			transclude: true,
+			compile: function(tElement, tAttrs, transcludeFn) {
+				return function($scope, iElement, iAttrs, ctrl) {
+					var h, w, panelDims;
+
+					$scope.$watch(tAttrs.height, function(value) {
+						h = value;
+						if (h && w) update(h, w);
+					});
+
+					$scope.$watch(tAttrs.width, function(value) {
+						w = value;
+						if (h && w) update(h, w);
+					});
+
+
+					function update(h, w) {
+						iElement.css('height', (h * 20) + 'px');
+						iElement.css('width', (w * 20) + 'px');
+
+						// Create one to get size
+      					var panel_scope = $scope.$new();
+      					transcludeFn(panel_scope, function(clone) {
+      						iElement.append(stripWhitespace(clone));
+      					});
+					}
+
+      				// Just grab the panel element not the whitespace
+					function stripWhitespace($el) {
+  						for (var i = 0; i < $el.length; i++) {
+  							if ($el[i].className && 
+  								$el[i].className.indexOf('panel') >= 0) {
+  								return $el[i];
+  							}
+  						}
+					}
+
+					// Calculate and create the panels that can fit in the array
+					function calculatePanelCount(newDimensions) {
+						panelDims = newDimensions;
+
+						var across = Math.floor(w / panelDims.width);
+						var hPad = (w % panelDims.width) / 2;
+						var down = Math.floor(h / panelDims.height);
+						var vPad = (h % panelDims.height) / 2;
+						var count = across * down;
+
+						console.log(count);
+						iElement.css('padding', (vPad * 20) + 'px 0 0 ' + (hPad * 20) + 'px');
+
+						for (var i = 1; i < count; i++) {
+							var panel_scope = $scope.$new();
+							transcludeFn(panel_scope, function(clone) {
+								iElement.append(stripWhitespace(clone));
+							});
+						}
+
+						$scope.$broadcast('array:panel-layout', {
+							dimensions: panelDims,
+							scale: 20
+						});
+					}
+
+					// Calculate how many will fit
+					$scope.$on('panel:value-change', function(e) {
+						var pDims = e.targetScope.part.dimensions;
+						if (!panelDims || 
+								panelDims.height != pDims.height || 
+								panelDims.width != pDims.width) {
+							calculatePanelCount(pDims);
+						}
+					});
+				}
+			} 
+		}
+		return directiveDef;
+	})
+</pre>
+			</div>
+			
+			<div class="step" data-x="-550" data-y="9600" data-z="-100" data-rotate-y="-60">
+				<h2>That's All!</h2>
+				<h4>I ran out of time :(</h4>
+			</div>
+
+
+ 			<div class="step invisible center" data-x="0" data-y="-1200" data-z="0">
 			</div>
 
 			<div class="step clarify" data-x="-3500" data-y="-1150" data-z="-2500">
@@ -68,9 +746,15 @@
 			    <p style="font-size: 22px">Thomas A. Valletta - @tvalletta</p>
 			</div>
 
-			<div class="step clarify" data-x="-120" data-y="-75" data-z="-1">
-				<img src="img/cloud-01b.svg" style="width: 90%; height: 90%"/>
+			<div class="step clarify" data-x="-200" data-y="10" data-z="-101">
+				<img src="img/cloud-03b.svg" style="width: 160%; height: 160%"/>
 			</div>
+
+			<!-- First dark cloud behind step-14 -->
+			<div class="step clarify" data-x="2000" data-y="5100" data-z="-700">
+			    <img src="img/cloud-01bd.svg" style="width: 100%; height: 100%; "/>
+			</div>
+
 		</div>
     <script type="text/javascript" src="js/impress.js"></script>
     <script>

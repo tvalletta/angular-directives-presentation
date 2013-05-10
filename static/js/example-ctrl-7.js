@@ -1,5 +1,5 @@
 function Ctrl7($scope, parts) {
-	$scope.part = parts[1];
+	$scope.part = parts[2];
 }
 
 angular.module('solar', [])
@@ -43,52 +43,76 @@ angular.module('solar', [])
 			template: '<div class="array"/>',
 			transclude: true,
 			compile: function(tElement, tAttrs, transcludeFn) {
-				return function(scope, iElement, iAttrs, ctrl) {
-					var h, w;
+				return function($scope, iElement, iAttrs, ctrl) {
+					var h, w, panelDims;
 
-					scope.$watch(tAttrs.height, function(value) {
+					$scope.$watch(tAttrs.height, function(value) {
 						h = value;
 						if (h && w) update(h, w);
 					});
 
-					scope.$watch(tAttrs.width, function(value) {
+					$scope.$watch(tAttrs.width, function(value) {
 						w = value;
 						if (h && w) update(h, w);
 					});
 
+
 					function update(h, w) {
-						console.log("h: " + h + " w: " + w);
+						iElement.css('height', (h * 20) + 'px');
+						iElement.css('width', (w * 20) + 'px');
 
 						// Create one to get size
-      					var child_scope = scope.$new();
-      					transcludeFn(child_scope, function(clone) {
-      						
-      						// Just grab the panel element not the whitespace
-      						var panelEl;
-      						for (var i = 0; i < clone.length; i++) {
-      							if (clone[i].className && 
-      								clone[i].className.indexOf('panel') >= 0) {
-      								panelEl = clone[i];
-      								break;
-      							}
-      						}
-
-      						iElement.append(panelEl);
-      						scope.$on('panel-linked', function(x, y, z) {
-      							console.log('stop');
-      						});
-
-
-      						console.log(tElement + iElement + child_scope);
-
-      						console.log('first clone');
+      					var panel_scope = $scope.$new();
+      					transcludeFn(panel_scope, function(clone) {
+      						iElement.append(stripWhitespace(clone));
       					});
-
-      					// Calculate how many will fit
-
-      					// Create the rest and lay them out
-
 					}
+
+      				// Just grab the panel element not the whitespace
+					function stripWhitespace($el) {
+  						for (var i = 0; i < $el.length; i++) {
+  							if ($el[i].className && 
+  								$el[i].className.indexOf('panel') >= 0) {
+  								return $el[i];
+  							}
+  						}
+					}
+
+					// Calculate and create the panels that can fit in the array
+					function calculatePanelCount(newDimensions) {
+						panelDims = newDimensions;
+
+						var across = Math.floor(w / panelDims.width);
+						var hPad = (w % panelDims.width) / 2;
+						var down = Math.floor(h / panelDims.height);
+						var vPad = (h % panelDims.height) / 2;
+						var count = across * down;
+
+						console.log(count);
+						iElement.css('padding', (vPad * 20) + 'px 0 0 ' + (hPad * 20) + 'px');
+
+						for (var i = 1; i < count; i++) {
+							var panel_scope = $scope.$new();
+							transcludeFn(panel_scope, function(clone) {
+								iElement.append(stripWhitespace(clone));
+							});
+						}
+
+						$scope.$broadcast('array:panel-layout', {
+							dimensions: panelDims,
+							scale: 20
+						});
+					}
+
+					// Calculate how many will fit
+					$scope.$on('panel:value-change', function(e) {
+						var pDims = e.targetScope.part.dimensions;
+						if (!panelDims || 
+								panelDims.height != pDims.height || 
+								panelDims.width != pDims.width) {
+							calculatePanelCount(pDims);
+						}
+					});
 				}
 			} 
 		}
@@ -105,19 +129,15 @@ angular.module('solar', [])
 			restrict: 'E',
 			replace: true,
 			template: '<div class="panel"/>',
-			link: function(scope, el, attrs) {
-				function updateTmpl(value) {
-					el.css('height', value.height);
-					el.css('width', value.width);
-					scope.$emit('panel-linked', {
-						scope: scope,
-						height: value.height,
-						width: value.width 
-					});
-				}
-
-				scope.$watch(attrs.part, function(value) {
-					updateTmpl(value);
+			link: function($scope, el, attrs) {
+				$scope.$watch(attrs.part, function(value) {
+					$scope.part = value;
+					$scope.$emit('panel:value-change');
+				});
+				$scope.$on('array:panel-layout', function(e, layout) {
+					el.css('height', (layout.dimensions.height * layout.scale) + 'px');
+					el.css('width', (layout.dimensions.width * layout.scale) + 'px');
+					el.addClass('panel');
 				});
 			}
 		}

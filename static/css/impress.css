@@ -229,6 +229,28 @@ a:focus {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Artifika';
+    src: url('font/artifika/Artifika-Regular-webfont.eot');
+    src: url('font/artifika/Artifika-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/artifika/Artifika-Regular-webfont.woff') format('woff'),
+         url('font/artifika/Artifika-Regular-webfont.ttf') format('truetype'),
+         url('font/artifika/Artifika-Regular-webfont.svg#Raleway') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Goudy';
+    src: url('font/goudy/goudy_bookletter_1911-webfont.eot');
+    src: url('font/goudy/goudy_bookletter_1911-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/goudy/goudy_bookletter_1911-webfont.woff') format('woff'),
+         url('font/goudy/goudy_bookletter_1911-webfont.ttf') format('truetype'),
+         url('font/goudy/goudy_bookletter_1911-webfont.svg#Raleway') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 h1 {font-size: 128px; line-height: 128px; color: rgb(231, 173, 13); font-family: 'Oxygen';}
 h2 {font-size: 96px; line-height: 96px; color: rgb(92, 131, 198);}
 h3 {font-size: 64px; line-height: 64px; color: rgb(92, 131, 198);}

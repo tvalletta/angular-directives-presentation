@@ -1,0 +1,24 @@
+.box {
+	background-color: #fff;
+	border: 3px solid black;
+	border-radius: 43px;
+	margin: auto;
+	padding: 40px 20px 20px;
+	height: 400px;
+	width: 50%;
+
+}
+
+.meta 	{margin-top: 17px; color: rgb(92, 131, 198);}
+.code 	{margin-left: 33px; color: rgb(102, 102, 102); font-family: Junction;}
+
+.large 	{font-size: 48px; line-height: 48px;}
+.med 	{font-size: 40px; line-height: 40px;}
+.small 	{font-size: 32px; line-height: 32px;}
+.x-small 	{font-size: 24px; line-height: 24px;}
+.xx-small 	{font-size: 16px; line-height: 16px;}
+.xxx-small 	{font-size: 9px; line-height: 9px;}
+
+.quote 	{font-size: 84px; line-height: 128px; font-family: Goudy; text-align: center;}
+
+pre 	{font-size: 28px; line-height: 32px; font-family: Junction;}
