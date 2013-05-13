@@ -1,5 +1,5 @@
 function Ctrl7($scope, parts) {
-	$scope.part = parts[2];
+	$scope.part = parts[0];
 }
 
 angular.module('solar', [])

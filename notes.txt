@@ -38,3 +38,5 @@ Things that suck:
 angular module syntax
 directive returning a link function syntax
 You have to scope.$watch() because people expext 2 way binding
+
+transcludge -Bryson
