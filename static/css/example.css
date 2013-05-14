@@ -1,0 +1,17 @@
+body, table {
+	font: 36px courier, monospace;
+	text-align: center;
+}
+
+button {
+	font-size: 36px;
+}
+
+.array {
+	outline: 5px solid red;
+}
+
+.panel {
+	float: left;
+	outline: 1px solid gray;
+}

@@ -1,12 +1,14 @@
 <html ng-app>
 	<head>
 		<title>Angular Example 2</title>
+        <link href="css/example.css" rel="stylesheet" />
 		<script src="js/lib/angular.min.js"></script>
 		<script src="js/example-ctrl-2.js"></script>
 	</head>
 	<body ng-controller="Ctrl2">
 	 
-		<p>Number of parts: {{ parts.length }}</p>
+		<p>Number of parts: {{ partList.length }}</p>
 	 
+	 	<button ng-click="addPart()">Add Part</button>
 	</body>
 </html>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>Random</title>
+        <title>Angular Directives: A Deep Dive</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="author" content="Thomas A. Valletta" />
         <link href="css/impress.css" rel="stylesheet" />
@@ -27,7 +27,10 @@
 				Bringing “simple” back to the development of complex webapps...
 			</div>
 
-			<!-- Examples -->
+
+
+<!-- Example 1 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
+
 			<div class="step" data-x="-550" data-y="1200" data-z="-100" data-rotate-y="-60">
 				<h2>View:</h2>
 				<h4>Expression Evaluation</h4>
@@ -48,11 +51,21 @@
 &lt;/html&gt;
 </pre>			
 			</div>
-			
+
+			<div class="step invisible" data-x="1050" data-y="1200" data-z="-100">
+				<iframe height="400px" width="800px" src="example-1.html"></iframe>
+			</div>
+
+
+
+
+<!-- Example 2 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
+
 			<div class="step" data-x="-550" data-y="2400" data-z="-100" data-rotate-y="-60">
 				<h2>Controller:</h2>
 				<h4>Data Driven View</h4>
 			</div>
+
 			<div class="step" data-x="50" data-y="2400" data-z="-100">
 <pre class='prettyprint lang-html'>
 &lt;html ng-app&gt;
@@ -63,43 +76,52 @@
 	&lt;/head&gt;
 	&lt;body ng-controller="Ctrl2"&gt;
 	 
-		&lt;p&gt;Number of parts: {{ parts.length }}&lt;/p&gt;
+		&lt;p&gt;Number of parts: {{ partList.length }}&lt;/p&gt;
 	 
 	&lt;/body&gt;
 &lt;/html&gt;
 </pre>			
 			</div>
 
-			<div class="step" data-x="850" data-y="2400" data-z="-100">
+			<div class="step" data-x="1050" data-y="2400" data-z="-100">
 <pre class='prettyprint lang-js'>
 function Ctrl2($scope) {
-	$scope.parts = [
+	$scope.partList = [
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'Suntech'
 		},
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'Yingli'
 		},
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'First Solar'
 		},
 		{
-			part: 'inverter',
+			type: 'inverter',
 			supplier: 'Enphase'
 		}
 	];
 }
 </pre>
 			</div>
+
+			<div class="step invisible" data-x="2050" data-y="2400" data-z="-100">
+				<iframe height="400px" width="800px" src="example-2.html"></iframe>
+			</div>
+
+
+
+<!-- Example 3 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 			
 			<div class="step" data-x="-550" data-y="3600" data-z="-100" data-rotate-y="-60">
 				<h2>Directive:</h2>
 				<h4>ng-repeat</h4>
 			</div>
-			<div class="step" data-x="50" data-y="3600" data-z="-100">
+
+			<div class="step clarify" data-x="50" data-y="3600" data-z="-100">
 <pre class='prettyprint lang-html'>
 &lt;html ng-app&gt;
 	&lt;head&gt;
@@ -111,11 +133,11 @@ function Ctrl2($scope) {
 	 
 		&lt;table&gt;
 			&lt;tr&gt;
-				&lt;th&gt;Part&lt;/th&gt;
+				&lt;th&gt;Type&lt;/th&gt;
 				&lt;th&gt;Supplier&lt;/th&gt;
 			&lt;/tr&gt;
-			&lt;tr ng-repeat="part in parts"&gt;
-				&lt;td&gt;{{ part.part }}&lt;/td&gt;
+			&lt;tr ng-repeat="part in partList"&gt;
+				&lt;td&gt;{{ part.type }}&lt;/td&gt;
 				&lt;td&gt;{{ part.supplier }}&lt;/td&gt;
 			&lt;/tr&gt;
 		&lt;/table&gt;
@@ -125,24 +147,32 @@ function Ctrl2($scope) {
 </pre>			
 			</div>
 
-			<div class="step" data-x="850" data-y="3600" data-z="-100">
+			<div class="step invisible" data-x="50" data-y="3600" data-z="-100">
+				<div class="focus-box" style="width: 570px; height: 360px; position: absolute; left: 130px; top: -55px;"></div> 
+			</div>
+
+			<div class="step invisible" data-x="50" data-y="3600" data-z="-100">
+				<div class="focus-box" style="width: 550px; height: 148px; position: absolute; left: 160px; top: 111px;"></div> 
+			</div>
+
+			<div class="step" data-x="1050" data-y="3600" data-z="-100">
 <pre class='prettyprint lang-js'>
 function Ctrl3($scope) {
-	$scope.parts = [
+	$scope.partList = [
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'Suntech'
 		},
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'Yingli'
 		},
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'First Solar'
 		},
 		{
-			part: 'inverter',
+			type: 'inverter',
 			supplier: 'Enphase'
 		}
 	];
@@ -150,12 +180,20 @@ function Ctrl3($scope) {
 </pre>
 			</div>
 
-			<!-- EXAMPLE 4 -->			
+			<div class="step invisible" data-x="2050" data-y="3600" data-z="-100">
+				<iframe height="400px" width="800px" src="example-3.html"></iframe>
+			</div>
+
+
+
+<!-- Example 4 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
+
 			<div class="step" data-x="-550" data-y="4800" data-z="-100" data-rotate-y="-60">
 				<h2>Directive:</h2>
 				<h4>Easy As Pie</h4>
 			</div>
-			<div class="step" data-x="50" data-y="4800" data-z="-100">
+
+			<div class="step" data-x="50" data-y="4800" data-z="-100" data-onenter="showExample4">
 <pre class='prettyprint lang-html'>
 &lt;html ng-app="solar"&gt;
 	&lt;head&gt;
@@ -179,21 +217,21 @@ function Ctrl3($scope) {
 			<div class="step" data-x="850" data-y="4800" data-z="-100">
 <pre class='prettyprint lang-js'>
 function Ctrl4($scope) {
-	$scope.parts = [
+	$scope.partList = [
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'Suntech'
 		},
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'Yingli'
 		},
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'First Solar'
 		},
 		{
-			part: 'inverter',
+			type: 'inverter',
 			supplier: 'Enphase'
 		}
 	];
@@ -261,7 +299,10 @@ angular.module('solar', [])
 				</div>
 			</div>
 			
-			<!-- EXAMPLE 5 -->			
+
+
+<!-- Example 5 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
+
 			<div class="step" data-x="-550" data-y="6000" data-z="-100" data-rotate-y="-60">
 				<h2>Directive:</h2>
 				<h4>Two Way Binding</h4>
@@ -290,21 +331,21 @@ angular.module('solar', [])
 			<div class="step" data-x="850" data-y="6000" data-z="-100">
 <pre class='prettyprint lang-js'>
 function Ctrl5($scope) {
-	$scope.parts = [
+	$scope.partList = [
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'Suntech'
 		},
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'Yingli'
 		},
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'First Solar'
 		},
 		{
-			part: 'inverter',
+			type: 'inverter',
 			supplier: 'Enphase'
 		}
 	];
@@ -392,7 +433,8 @@ angular.module('solar', [])
 				</div>
 			</div>
 			
-			<!-- EXAMPLE 6 -->	
+<!-- Example 6 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
+
 			<div class="step" data-x="-550" data-y="7200" data-z="-100" data-rotate-y="-60">
 				<h2>Directive:</h2>
 				<h4>Custom Element Tag</h4>
@@ -422,21 +464,21 @@ angular.module('solar', [])
 			<div class="step" data-x="850" data-y="7200" data-z="-100">
 <pre class='prettyprint lang-js'>
 function Ctrl6($scope) {
-	$scope.parts = [
+	$scope.partList = [
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'Suntech'
 		},
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'Yingli'
 		},
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'First Solar'
 		},
 		{
-			part: 'inverter',
+			type: 'inverter',
 			supplier: 'Enphase'
 		}
 	];
@@ -542,7 +584,10 @@ angular.module('solar', [])
 				</div>
 			</div>
 			
-			<!-- EXAMPLE 7 -->	
+
+
+<!-- Example 2 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
+
 			<div class="step" data-x="-550" data-y="8400" data-z="-100" data-rotate-y="-60">
 				<h2>Directive:</h2>
 				<h4>Transclusion</h4>
@@ -581,7 +626,7 @@ function Ctrl7($scope, parts) {
 	.factory('parts', function() {
 		return [
 			{
-				part: 'panel',
+				type: 'panel',
 				supplier: 'Suntech',
 				dimensions: {
 					height: 5,
@@ -589,7 +634,7 @@ function Ctrl7($scope, parts) {
 				}
 			},
 			{
-				part: 'panel',
+				type: 'panel',
 				supplier: 'Yingli',
 				dimensions: {
 					height: 3,
@@ -597,7 +642,7 @@ function Ctrl7($scope, parts) {
 				}
 			},
 			{
-				part: 'panel',
+				type: 'panel',
 				supplier: 'First Solar',
 				dimensions: {
 					height: 4,
@@ -750,16 +795,16 @@ function Ctrl7($scope, parts) {
 				<img src="img/cloud-03b.svg" style="width: 160%; height: 160%"/>
 			</div>
 
-			<!-- First dark cloud behind step-14 -->
-			<div class="step clarify" data-x="2000" data-y="5100" data-z="-700">
+			<!-- First dark cloud behind step-4 -->
+			<div id="cloud-4-1" class="step invisible" data-x="2000" data-y="5100" data-z="-700">
 			    <img src="img/cloud-01bd.svg" style="width: 100%; height: 100%; "/>
 			</div>
-			<div class="step clarify" data-x="2300" data-y="5100" data-z="-1400">
+			<div id="cloud-4-2" class="step invisible" data-x="2300" data-y="5100" data-z="-1400">
 			    <img src="img/cloud-02bd.svg" style="width: 150%; height: 150%; "/>
 			</div>
 
-			<!-- First dark cloud behind step-14 -->
-			<div class="step clarify" data-x="2000" data-y="5100" data-z="-700">
+			<!-- First dark cloud behind step-5 -->
+			<div class="step invisible" data-x="2000" data-y="5100" data-z="-700">
 			    <img src="img/cloud-01bd.svg" style="width: 100%; height: 100%; "/>
 			</div>
 
@@ -839,6 +884,9 @@ function Ctrl7($scope, parts) {
 			$help.removeClass('show');
     	}
 
+    	function showExample4() {
+    		$('#cloud-4-1, #cloud-4-2').addClass('clarify');
+    	}
     </script>
     </body>
 </html>

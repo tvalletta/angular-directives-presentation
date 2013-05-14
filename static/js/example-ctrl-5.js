@@ -1,19 +1,19 @@
 function Ctrl5($scope) {
-	$scope.parts = [
+	$scope.partList = [
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'Suntech'
 		},
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'Yingli'
 		},
 		{
-			part: 'panel',
+			type: 'panel',
 			supplier: 'First Solar'
 		},
 		{
-			part: 'inverter',
+			type: 'inverter',
 			supplier: 'Enphase'
 		}
 	];

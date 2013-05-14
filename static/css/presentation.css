@@ -22,3 +22,9 @@
 .quote 	{font-size: 84px; line-height: 128px; font-family: Goudy; text-align: center;}
 
 pre 	{font-size: 28px; line-height: 32px; font-family: Junction;}
+
+.focus-box {
+	border-radius: 33px;
+	box-shadow: 0 0 0 1000px #fff;
+	opacity: 0.8;
+}

@@ -1,12 +1,12 @@
-function Ctrl7($scope, parts) {
-	$scope.part = parts[0];
+function Ctrl7($scope, partList) {
+	$scope.part = partList[0];
 }
 
 angular.module('solar', [])
-	.factory('parts', function() {
+	.factory('partList', function() {
 		return [
 			{
-				part: 'panel',
+				type: 'panel',
 				supplier: 'Suntech',
 				dimensions: {
 					height: 5,
@@ -14,7 +14,7 @@ angular.module('solar', [])
 				}
 			},
 			{
-				part: 'panel',
+				type: 'panel',
 				supplier: 'Yingli',
 				dimensions: {
 					height: 3,
@@ -22,16 +22,12 @@ angular.module('solar', [])
 				}
 			},
 			{
-				part: 'panel',
+				type: 'panel',
 				supplier: 'First Solar',
 				dimensions: {
 					height: 4,
 					width: 8
 				}
-			},
-			{
-				part: 'inverter',
-				supplier: 'Enphase'
 			}
 		];
 	})

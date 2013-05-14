@@ -1,21 +1,23 @@
 <html ng-app>
 	<head>
 		<title>Angular Example 3</title>
+        <link href="css/example.css" rel="stylesheet" />
 		<script src="js/lib/angular.min.js"></script>
 		<script src="js/example-ctrl-3.js"></script>
 	</head>
 	<body ng-controller="Ctrl3">
 	 
-		<table>
+		<table align="center">
 			<tr>
-				<th>Part</th>
+				<th>Type</th>
 				<th>Supplier</th>
 			</tr>
-			<tr ng-repeat="part in parts">
-				<td>{{ part.part }}</td>
+			<tr ng-repeat="part in partList">
+				<td>{{ part.type }}</td>
 				<td>{{ part.supplier }}</td>
 			</tr>
 		</table>
+	 	<button ng-click="addPart()">Add Part</button>
 	 
 	</body>
 </html>
