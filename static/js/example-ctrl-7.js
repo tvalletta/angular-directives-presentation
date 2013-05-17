@@ -1,5 +1,17 @@
 function Ctrl7($scope, partList) {
-	$scope.part = partList[0];
+	var i = 0;
+	$scope.item = partList[i];
+	$scope.height = 24;
+	$scope.width = 36;
+	$scope.changeHeight = function() {
+		$scope.height = 10 + Math.round(Math.random() * 16);
+	}
+	$scope.changeWidth = function() {
+		$scope.width = 15 + Math.round(Math.random() * 25);
+	}
+	$scope.changePanel = function() {
+		$scope.item = partList[(++i % 3)];
+	}
 }
 
 angular.module('solar', [])
@@ -42,18 +54,19 @@ angular.module('solar', [])
 				return function($scope, iElement, iAttrs, ctrl) {
 					var h, w, panelDims;
 
-					$scope.$watch(tAttrs.height, function(value) {
+					iAttrs.$observe('height', function(value) {
 						h = value;
 						if (h && w) update(h, w);
 					});
 
-					$scope.$watch(tAttrs.width, function(value) {
+					iAttrs.$observe('width', function(value) {
 						w = value;
 						if (h && w) update(h, w);
 					});
 
 
 					function update(h, w) {
+						panelDims = false;
 						iElement.css('height', (h * 20) + 'px');
 						iElement.css('width', (w * 20) + 'px');
 
@@ -87,7 +100,7 @@ angular.module('solar', [])
 						console.log(count);
 						iElement.css('padding', (vPad * 20) + 'px 0 0 ' + (hPad * 20) + 'px');
 
-						for (var i = 1; i < count; i++) {
+						for (var i = 0; i < count; i++) {
 							var panel_scope = $scope.$new();
 							transcludeFn(panel_scope, function(clone) {
 								iElement.append(stripWhitespace(clone));
@@ -106,6 +119,7 @@ angular.module('solar', [])
 						if (!panelDims || 
 								panelDims.height != pDims.height || 
 								panelDims.width != pDims.width) {
+							iElement.children().remove();
 							calculatePanelCount(pDims);
 						}
 					});
@@ -114,13 +128,7 @@ angular.module('solar', [])
 		}
 		return directiveDef;
 	})
-	.directive('panel', ['$timeout', 'parts', function($timeout, parts) {
-		// We can do work in the compile function that will happen 
-		// before the parent link function is called, but there is no
-		// scope to which we may write.  So making values availabe to 
-		// parent directives is effectively impossible without using
-		// globals. Even saving data to the DOM element doesn't work 
-		// because the cloned element is different.  
+	.directive('panel', ['$timeout', function($timeout) {
 		var directiveDef = {
 			restrict: 'E',
 			replace: true,

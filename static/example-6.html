@@ -8,10 +8,12 @@
 	<body ng-controller="Ctrl6">
 	 
 		<ul>
-			<li ng-repeat="part in parts">
-				<party part="part"/>
+			<li ng-repeat="item in partList">
+				<party part="item"/>
 			</li>
 		</ul>
+	 	<button ng-click="addPart()">Add Part</button>
+	 	<button ng-click="changeType()">Change Type</button>	 	 
 	 
 	</body>
 </html>

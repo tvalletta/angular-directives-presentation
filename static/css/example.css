@@ -7,8 +7,19 @@ button {
 	font-size: 36px;
 }
 
+img {
+	height: 10%; 
+	width: 10%;
+}
+
+ul {
+	list-style: none;
+}
+
 .array {
-	outline: 5px solid red;
+	opacity: .4;
+	background: #fff;
+	margin: auto;
 }
 
 .panel {

@@ -1,3 +1,24 @@
+
+body.cloudy {
+    background: rgb(169, 187, 198);
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(169, 187, 198)), to(rgb(91, 160, 197)));
+    background: -webkit-radial-gradient(rgb(169, 187, 198), rgb(91, 160, 197));
+    background:    -moz-radial-gradient(rgb(169, 187, 198), rgb(91, 160, 197));
+    background:     -ms-radial-gradient(rgb(169, 187, 198), rgb(91, 160, 197));
+    background:      -o-radial-gradient(rgb(169, 187, 198), rgb(91, 160, 197));
+    background:         radial-gradient(rgb(169, 187, 198), rgb(91, 160, 197));    
+}
+
+body.dark {
+    background: rgb(169, 187, 198);
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(169, 187, 198)), to(rgb(66, 116, 143)));
+    background: -webkit-radial-gradient(rgb(169, 187, 198), rgb(66, 116, 143));
+    background:    -moz-radial-gradient(rgb(169, 187, 198), rgb(66, 116, 143));
+    background:     -ms-radial-gradient(rgb(169, 187, 198), rgb(66, 116, 143));
+    background:      -o-radial-gradient(rgb(169, 187, 198), rgb(66, 116, 143));
+    background:         radial-gradient(rgb(169, 187, 198), rgb(66, 116, 143));    
+}
+
 .box {
 	background-color: #fff;
 	border: 3px solid black;
@@ -20,11 +41,12 @@
 .xxx-small 	{font-size: 9px; line-height: 9px;}
 
 .quote 	{font-size: 84px; line-height: 128px; font-family: Goudy; text-align: center;}
+.quote.x-small {font-size: 42px; line-height: 64px; font-family: Goudy; text-align: center;}
 
 pre 	{font-size: 28px; line-height: 32px; font-family: Junction;}
 
 .focus-box {
 	border-radius: 33px;
-	box-shadow: 0 0 0 1000px #fff;
-	opacity: 0.8;
+	box-shadow: 0 0 0 10000px #fff;
+	opacity: 0.6;
 }

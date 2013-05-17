@@ -550,17 +550,34 @@
         
         // `prev` API function goes to previous step (in document order)
         var prev = function () {
-            var prev = steps.indexOf( activeStep ) - 1;
-            prev = prev >= 0 ? steps[ prev ] : steps[ steps.length-1 ];
-            
-            return goto(prev);
+            var activeIndex = steps.indexOf(activeStep);
+
+            var i = 1, next;
+            while(!next) {
+                var target = steps.length - (((steps.length - activeIndex) + i) % steps.length);
+                if (target === steps.length) target = 0;
+                if (!steps[target].classList.contains('skip')) {
+                    next = steps[target];
+                }
+                i++;
+            }
+
+            return goto(next);
         };
         
         // `next` API function goes to next step (in document order)
         var next = function () {
-            var next = steps.indexOf( activeStep ) + 1;
-            next = next < steps.length ? steps[ next ] : steps[ 0 ];
-            
+            var activeIndex = steps.indexOf(activeStep);
+
+            var i = 1, next;
+            while(!next) {
+                var target = (activeIndex + i) % steps.length;
+                if (!steps[target].classList.contains('skip')) {
+                    next = steps[target];
+                }
+                i++;
+            }
+
             return goto(next);
         };
         

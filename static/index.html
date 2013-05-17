@@ -23,7 +23,7 @@
 			    <img src="img/AngularJS-large.png"/>
 			</div>
 
-			<div class="step quote" data-x="50" data-y="80" data-z="-100">
+			<div class="step clarify quote" data-x="50" data-y="80" data-z="-100">
 				Bringing “simple” back to the development of complex webapps...
 			</div>
 
@@ -31,11 +31,11 @@
 
 <!-- Example 1 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
-			<div class="step" data-x="-550" data-y="1200" data-z="-100" data-rotate-y="-60">
+			<div class="step invisible" data-x="-550" data-y="1200" data-z="-100" data-rotate-y="-60">
 				<h2>View:</h2>
-				<h4>Expression Evaluation</h4>
+				<h5>Expression<br/>Evaluation</h5>
 			</div>
-			<div class="step" data-x="50" data-y="1200" data-z="-100">
+			<div class="step clarify" data-x="50" data-y="1200" data-z="-100">
 <pre class='prettyprint lang-html'>
 &lt;html ng-app&gt;
 	&lt;head&gt;
@@ -52,6 +52,10 @@
 </pre>			
 			</div>
 
+			<div class="step invisible" data-x="50" data-y="1200" data-z="-100">
+				<div class="focus-box" style="width: 520px; height: 70px; position: absolute; left: 130px; top: 85px;"></div> 
+			</div>
+
 			<div class="step invisible" data-x="1050" data-y="1200" data-z="-100">
 				<iframe height="400px" width="800px" src="example-1.html"></iframe>
 			</div>
@@ -61,12 +65,12 @@
 
 <!-- Example 2 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
-			<div class="step" data-x="-550" data-y="2400" data-z="-100" data-rotate-y="-60">
+			<div class="step invisible" data-x="-550" data-y="2400" data-z="-100" data-rotate-y="-60">
 				<h2>Controller:</h2>
-				<h4>Data Driven View</h4>
+				<h5>Data Driven View</h5>
 			</div>
 
-			<div class="step" data-x="50" data-y="2400" data-z="-100">
+			<div class="step clarify" data-x="50" data-y="2400" data-z="-100">
 <pre class='prettyprint lang-html'>
 &lt;html ng-app&gt;
 	&lt;head&gt;
@@ -81,6 +85,10 @@
 	&lt;/body&gt;
 &lt;/html&gt;
 </pre>			
+			</div>
+
+			<div class="step invisible" data-x="50" data-y="2400" data-z="-100">
+				<div class="focus-box" style="width: 680px; height: 70px; position: absolute; left: 130px; top: 85px;"></div> 
 			</div>
 
 			<div class="step" data-x="1050" data-y="2400" data-z="-100">
@@ -116,9 +124,11 @@ function Ctrl2($scope) {
 
 <!-- Example 3 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 			
-			<div class="step" data-x="-550" data-y="3600" data-z="-100" data-rotate-y="-60">
+			<div class="step invisible" data-x="-550" data-y="3600" data-z="-100" data-rotate-y="-60">
 				<h2>Directive:</h2>
-				<h4>ng-repeat</h4>
+				<h5>Using Directives</h5>
+				<br/>
+				<h4 class="code">“ng-repeat”</h4>
 			</div>
 
 			<div class="step clarify" data-x="50" data-y="3600" data-z="-100">
@@ -136,9 +146,9 @@ function Ctrl2($scope) {
 				&lt;th&gt;Type&lt;/th&gt;
 				&lt;th&gt;Supplier&lt;/th&gt;
 			&lt;/tr&gt;
-			&lt;tr ng-repeat="part in partList"&gt;
-				&lt;td&gt;{{ part.type }}&lt;/td&gt;
-				&lt;td&gt;{{ part.supplier }}&lt;/td&gt;
+			&lt;tr ng-repeat="item in partList"&gt;
+				&lt;td&gt;{{ item.type }}&lt;/td&gt;
+				&lt;td&gt;{{ item.supplier }}&lt;/td&gt;
 			&lt;/tr&gt;
 		&lt;/table&gt;
 	 
@@ -180,7 +190,7 @@ function Ctrl3($scope) {
 </pre>
 			</div>
 
-			<div class="step invisible" data-x="2050" data-y="3600" data-z="-100">
+			<div class="step invisible" data-x="2050" data-y="3600" data-z="-100" data-onenter="endExample3">
 				<iframe height="400px" width="800px" src="example-3.html"></iframe>
 			</div>
 
@@ -188,12 +198,12 @@ function Ctrl3($scope) {
 
 <!-- Example 4 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
-			<div class="step" data-x="-550" data-y="4800" data-z="-100" data-rotate-y="-60">
+			<div class="step invisible" data-x="-550" data-y="4800" data-z="-100" data-rotate-y="-60">
 				<h2>Directive:</h2>
-				<h4>Easy As Pie</h4>
+				<h5>Making Directives</h5>
 			</div>
 
-			<div class="step" data-x="50" data-y="4800" data-z="-100" data-onenter="showExample4">
+			<div class="step clarify" data-x="50" data-y="4800" data-z="-100" data-onenter="startExample4">
 <pre class='prettyprint lang-html'>
 &lt;html ng-app="solar"&gt;
 	&lt;head&gt;
@@ -204,8 +214,8 @@ function Ctrl3($scope) {
 	&lt;body ng-controller="Ctrl4"&gt;
 	 
 		&lt;ul&gt;
-			&lt;li ng-repeat="part in parts"&gt;
-				&lt;img part="part"/&gt;
+			&lt;li ng-repeat="item in partList"&gt;
+				&lt;img part="item"/&gt;
 			&lt;/li&gt;
 		&lt;/ul&gt;
 	 
@@ -214,7 +224,11 @@ function Ctrl3($scope) {
 </pre>			
 			</div>
 
-			<div class="step" data-x="850" data-y="4800" data-z="-100">
+			<div class="step invisible" data-x="50" data-y="4800" data-z="-100">
+				<div class="focus-box" style="width: 550px; height: 188px; position: absolute; left: 130px; top: 31px;"></div> 
+			</div>
+
+			<div class="step clarify" data-x="1050" data-y="4800" data-z="-100">
 <pre class='prettyprint lang-js'>
 function Ctrl4($scope) {
 	$scope.partList = [
@@ -239,23 +253,39 @@ function Ctrl4($scope) {
 </pre>
 			</div>
 			
-			<div class="step" data-x="1650" data-y="4800" data-z="-100">
+			<div class="step clarify" data-x="2050" data-y="4800" data-z="-100" data-onenter="cloudy">
 <pre class='prettyprint lang-js'>
 angular.module('solar', [])
 	.directive('part', function() {
 		return function(scope, el, attrs) {
 			var part = scope.$eval(attrs.part);
-			el[0].src = 'img/' + part.part + '/' + part.supplier + '.svg';
+			el.attr('src', 'img/' + part.type + '.svg');
 		}
 	});
 </pre>
 			</div>
 
-			<!-- Simple Directive Layout -->
-			<div id="example-4-layout" class="step clarify" data-x="2400" data-y="4800" data-z="1300" data-rotate-y="-90"></div>
+			<div class="step invisible" data-x="2050" data-y="4800" data-z="-100">
+				<div class="focus-box" style="width: 330px; height: 38px; position: absolute; left: 344px; top: 24px;"></div> 
+			</div>
 
-			<div id="example-4-module-box" class="step clarify" data-x="2400" data-y="4800" data-z="1000" data-scale=".5" data-rotate-y="-90">
-				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+			<div class="step invisible" data-x="50" data-y="4800" data-z="-100">
+				<div class="focus-box" style="width: 300px; height: 38px; position: absolute; left: 254px; top: 104px;"></div> 
+			</div>
+
+			<div class="step invisible" data-x="2050" data-y="4800" data-z="-100">
+				<div class="focus-box" style="width: 330px; height: 38px; position: absolute; left: 344px; top: 24px;"></div> 
+			</div>
+
+			<div class="step invisible" data-x="3050" data-y="4800" data-z="-100">
+				<iframe height="400px" width="800px" src="example-4.html"></iframe>
+			</div>
+
+			<!-- Simple Directive Layout -->
+			<div id="example-4-layout" class="step clarify" data-x="4050" data-y="4800" data-z="1300" data-rotate-y="-90"></div>
+
+			<div id="example-4-module-box" class="step clarify" data-x="4050" data-y="4800" data-z="1000" data-scale=".5" data-rotate-y="-90">
+				<img src="img/line.svg"style="position: absolute; left: 676px; top: 260px"/>
 				<div class="box">
 					<h3 class="center">Module</h3>
 					<hr noshade/>
@@ -272,8 +302,8 @@ angular.module('solar', [])
 					</span>
 				</div>
 			</div>
-			<div id="example-4-directive-box" class="step clarify" data-x="2400" data-y="4800" data-z="1300" data-scale=".5" data-rotate-y="-90">
-				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+			<div id="example-4-directive-box" class="step clarify" data-x="4050" data-y="4800" data-z="1300" data-scale=".5" data-rotate-y="-90">
+				<img src="img/line.svg"style="position: absolute; left: 676px; top: 260px"/>
 				<div class="box">
 					<h3 class="center">Directive</h3>
 					<hr noshade/>
@@ -285,7 +315,7 @@ angular.module('solar', [])
 					</span>
 				</div>
 			</div>
-			<div id="example-4-link-box" class="step clarify" data-x="2400" data-y="4800" data-z="1600" data-scale=".5" data-rotate-y="-90">
+			<div id="example-4-link-box" class="step clarify" data-x="4050" data-y="4800" data-z="1600" data-scale=".5" data-rotate-y="-90" data-onenter="endExample4">
 				<div class="box">
 					<h3 class="center">Link Function</h3>
 					<hr noshade/>
@@ -303,11 +333,12 @@ angular.module('solar', [])
 
 <!-- Example 5 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
-			<div class="step" data-x="-550" data-y="6000" data-z="-100" data-rotate-y="-60">
+			<div class="step invisible" data-x="-550" data-y="6000" data-z="-100" data-rotate-y="-60">
 				<h2>Directive:</h2>
 				<h4>Two Way Binding</h4>
 			</div>
-			<div class="step" data-x="50" data-y="6000" data-z="-100">
+
+			<div class="step clarify" data-x="50" data-y="6000" data-z="-100" data-onenter="startExample5">
 <pre class='prettyprint lang-html'>
 &lt;html ng-app="solar"&gt;
 	&lt;head&gt;
@@ -318,8 +349,8 @@ angular.module('solar', [])
 	&lt;body ng-controller="Ctrl5"&gt;
 	 
 		&lt;ul&gt;
-			&lt;li ng-repeat="part in parts"&gt;
-				&lt;img part="part"/&gt;
+			&lt;li ng-repeat="item in partList"&gt;
+				&lt;img part="item"/&gt;
 			&lt;/li&gt;
 		&lt;/ul&gt;
 	 
@@ -328,7 +359,7 @@ angular.module('solar', [])
 </pre>			
 			</div>
 
-			<div class="step" data-x="850" data-y="6000" data-z="-100">
+			<div class="step clarify" data-x="1050" data-y="6000" data-z="-100">
 <pre class='prettyprint lang-js'>
 function Ctrl5($scope) {
 	$scope.partList = [
@@ -353,28 +384,39 @@ function Ctrl5($scope) {
 </pre>
 			</div>
 			
-			<div class="step" data-x="1650" data-y="6000" data-z="-100">
+			<div class="step clarify" data-x="2050" data-y="6000" data-z="-100">
 <pre class='prettyprint lang-js'>
 angular.module('solar', [])
 	.directive('part', function() {
 		return function(scope, el, attrs) {
 			function updateSrc(value) {
-				el[0].src = 'img/' + value.part + '/' + value.supplier + '.svg';
+				el.attr('src', 'img/' + value + '.svg');
 			}
 
-			scope.$watch(attrs.part, function(value) {
-				updateSrc(value);
+			scope.$watch('item.type', function(newValue, oldValue) {
+				updateSrc(newValue);
 			});
 		}
 	});
 </pre>
 			</div>
 
-			<!-- Simple Directive Layout -->
-			<div id="example-5-layout" class="step clarify" data-x="2400" data-y="6000" data-z="1300" data-rotate-y="-90"></div>
+			<div class="step invisible" data-x="2050" data-y="6000" data-z="-100">
+				<div class="focus-box" style="width: 830px; height: 148px; position: absolute; left: 180px; top: 51px;"></div> 
+			</div>
 
-			<div id="example-5-module-box" class="step clarify" data-x="2400" data-y="6000" data-z="1000" data-scale=".4" data-rotate-y="-90">
-				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+			<div class="step invisible" data-x="2050" data-y="4800" data-z="-100"></div>
+
+			<div class="step invisible" data-x="2050" data-y="6000" data-z="-100"></div>
+
+			<div class="step invisible" data-x="3050" data-y="6000" data-z="-100">
+				<iframe height="400px" width="800px" src="example-5.html"></iframe>
+			</div>
+
+			<div id="example-5-layout" class="step invisible" data-x="4050" data-y="6000" data-z="1300" data-rotate-y="-90"></div>
+
+			<div id="example-5-module-box" class="step clarify" data-x="4050" data-y="5900" data-z="1000" data-scale=".4" data-rotate-y="-90">
+				<img src="img/line.svg"style="position: absolute; left: 676px; top: 260px"/>
 				<div class="box">
 					<h3 class="center">Module</h3>
 					<hr noshade/>
@@ -391,8 +433,9 @@ angular.module('solar', [])
 					</span>
 				</div>
 			</div>
-			<div id="example-5-directive-box" class="step clarify" data-x="2400" data-y="6000" data-z="1200" data-scale=".4" data-rotate-y="-90">
-				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+			<div id="example-5-directive-box" class="step clarify" data-x="4050" data-y="5900" data-z="1200" data-scale=".4" data-rotate-y="-90">
+				<img src="img/line.svg"style="position: absolute; left: 676px; top: 260px"/>
+				<img src="img/short-line.svg"style="position: absolute; left: 450px; top: 504px;" />
 				<div class="box">
 					<h3 class="center">Directive</h3>
 					<hr noshade/>
@@ -404,8 +447,8 @@ angular.module('solar', [])
 					</span>
 				</div>
 			</div>
-			<div id="example-5-link-box" class="step clarify" data-x="2400" data-y="6000" data-z="1400" data-scale=".4" data-rotate-y="-90">
-				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+			<div id="example-5-link-1-box" class="step clarify" data-x="4050" data-y="5900" data-z="1400" data-scale=".4" data-rotate-y="-90">
+				<img src="img/line.svg"style="position: absolute; left: 676px; top: 260px"/>
 				<div class="box">
 					<h3 class="center">Link Fn</h3>
 					<hr noshade/>
@@ -418,13 +461,47 @@ angular.module('solar', [])
 					</span>
 					<hr noshade/>
 					<span class="small">
-						<div class="code">$scope.$watch(attr, fn)</div>
+						<div class="code">$scope.$watch(exp, fn, eq)</div>
 					</span>
 				</div>
 			</div>
-			<div id="example-5-watch-box" class="step clarify" data-x="2400" data-y="6000" data-z="1600" data-scale=".4" data-rotate-y="-90">
+			<div id="example-5-watch-box" class="step clarify" data-x="4050" data-y="5900" data-z="1600" data-scale=".4" data-rotate-y="-90">
 				<div class="box">
 					<h3 class="center">Watch Fn</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">newValue</div>
+						<div class="code">oldValue</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-5-link-2-box" class="step clarify" data-x="4050" data-y="6100" data-z="1400" data-scale=".4" data-rotate-y="-90">
+				<img src="img/line.svg"style="position: absolute; left: 676px; top: 260px"/>
+				<div class="box">
+					<h3 class="center">Link Fn</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">scope</div>
+						<div class="code">element</div>
+						<div class="code">attributes</div>
+						<div class="code">controller</div>
+					</span>
+					<hr noshade/>
+					<span class="small">
+						<div class="code">attrs.$observe(attr, fn)</div>
+					</span>
+				</div>
+			</div>
+
+			<div class="step quote x-small" data-x="4050" data-y="6100" data-z="2400" data-scale=".4" data-rotate-y="-135">
+				“Use $observe to observe the value changes of attributes that contain interpolation (e.g. src="{{bar}}"). Not only is this very efficient but it's also the only way to easily get the actual value because during the linking phase the interpolation hasn't been evaluated yet and so the value is at this time set to undefined.”
+			</div>
+
+			<div id="example-5-observe-box" class="step clarify" data-x="4050" data-y="6100" data-z="1600" data-scale=".4" data-rotate-y="-90" data-onenter="endExample5">
+				<div class="box">
+					<h3 class="center">Attr Observe Fn</h3>
 					<hr noshade/>
 					<span class="small">
 						<div class="meta">@param</div>
@@ -435,12 +512,12 @@ angular.module('solar', [])
 			
 <!-- Example 6 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
-			<div class="step" data-x="-550" data-y="7200" data-z="-100" data-rotate-y="-60">
+			<div class="step invisible" data-x="-550" data-y="7200" data-z="-100" data-rotate-y="-60">
 				<h2>Directive:</h2>
 				<h4>Custom Element Tag</h4>
 			</div>
 
-			<div class="step" data-x="50" data-y="7200" data-z="-100">
+			<div class="step clarify" data-x="50" data-y="7200" data-z="-100" data-onenter="startExample6">
 <pre class='prettyprint lang-html'>
 &lt;html ng-app="solar"&gt;
 	&lt;head&gt;
@@ -451,8 +528,8 @@ angular.module('solar', [])
 	&lt;body ng-controller="Ctrl6"&gt;
 	 
 		&lt;ul&gt;
-			&lt;li ng-repeat="part in parts"&gt;
-				&lt;party part="part"/&gt;
+			&lt;li ng-repeat="item in parts"&gt;
+				&lt;party part="item"/&gt;
 			&lt;/li&gt;
 		&lt;/ul&gt;
 	 
@@ -461,7 +538,15 @@ angular.module('solar', [])
 </pre>			
 			</div>
 
-			<div class="step" data-x="850" data-y="7200" data-z="-100">
+			<div class="step invisible" data-x="50" data-y="7200" data-z="-100">
+				<div class="focus-box" style="width: 370px; height: 50px; position: absolute; left: 230px; top: 96px;"></div> 
+			</div>
+			<div class="step invisible" data-x="50" data-y="6000" data-z="-100">				
+				<div class="focus-box" style="width: 370px; height: 50px; position: absolute; left: 230px; top: 96px;"></div>
+			</div>
+			<div class="step invisible" data-x="50" data-y="7200" data-z="-100"></div>
+
+			<div class="step clarify" data-x="1050" data-y="7200" data-z="-100">
 <pre class='prettyprint lang-js'>
 function Ctrl6($scope) {
 	$scope.partList = [
@@ -486,7 +571,7 @@ function Ctrl6($scope) {
 </pre>
 			</div>
 			
-			<div class="step" data-x="1650" data-y="7200" data-z="-100">
+			<div class="step clarify" data-x="2050" data-y="7200" data-z="-100">
 <pre class='prettyprint lang-js'>
 angular.module('solar', [])
 	.directive('party', function() {
@@ -496,10 +581,10 @@ angular.module('solar', [])
 			template: '&lt;img/&gt;',
 			link: function(scope, el, attrs) {
 				function updateSrc(value) {
-					el[0].src = 'img/' + value.part + '/' + value.supplier + '.svg';
+					el.attr('src', 'img/' + value + '.svg');
 				}
-				scope.$watch(attrs.part, function(value) {
-					updateSrc(value);
+				scope.$watch('item.type', function(newValue, oldValue) {
+					updateSrc(newValue);
 				});
 			}
 		}
@@ -508,11 +593,34 @@ angular.module('solar', [])
 </pre>
 			</div>
 
-			<!-- Simple Directive Layout -->
-			<div id="example-6-layout" class="step clarify" data-x="2400" data-y="7200" data-z="1300" data-rotate-y="-90"></div>
+			<div class="step invisible" data-x="2050" data-y="7200" data-z="-100">
+				<div class="focus-box" style="width: 540px; height: 180px; position: absolute; left: 130px; top: -179px;"></div> 
+			</div>
 
-			<div id="example-6-module-box" class="step clarify" data-x="2400" data-y="7200" data-z="950" data-scale=".3" data-rotate-y="-90">
-				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+			<div class="step invisible" data-x="2050" data-y="7200" data-z="-100">
+				<div class="focus-box" style="width: 320px; height: 50px; position: absolute; left: 130px; top: 241px;"></div> 
+			</div>
+
+			<div class="step invisible" data-x="2050" data-y="7200" data-z="-100">
+				<div class="focus-box" style="width: 770px; height: 220px; position: absolute; left: 242px; top: -19px;"></div> 
+			</div>
+
+			<div class="step invisible" data-x="2050" data-y="6000" data-z="-100">
+				<div class="focus-box" style="width: 830px; height: 250px; position: absolute; left: 180px; top: -66px;"></div> 
+			</div>
+
+			<div class="step invisible" data-x="2050" data-y="7200" data-z="-100">
+				<div class="focus-box" style="width: 770px; height: 220px; position: absolute; left: 242px; top: -19px;"></div> 
+			</div>
+
+			<div class="step invisible" data-x="3050" data-y="7200" data-z="-100">
+				<iframe height="400px" width="800px" src="example-6.html"></iframe>
+			</div>
+
+			<div id="example-6-layout" class="step clarify" data-x="4050" data-y="7200" data-z="1300" data-rotate-y="-90"></div>
+
+			<div id="example-6-module-box" class="step clarify" data-x="4050" data-y="7100" data-z="950" data-scale=".3" data-rotate-y="-90">
+				<img src="img/line.svg"style="position: absolute; left: 676px; top: 260px"/>
 				<div class="box">
 					<h3 class="center">Module</h3>
 					<hr noshade/>
@@ -529,8 +637,8 @@ angular.module('solar', [])
 					</span>
 				</div>
 			</div>
-			<div id="example-6-directive-box" class="step clarify" data-x="2400" data-y="7200" data-z="1120" data-scale=".3" data-rotate-y="-90">
-				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+			<div id="example-6-directive-box" class="step clarify" data-x="4050" data-y="7100" data-z="1120" data-scale=".3" data-rotate-y="-90">
+				<img src="img/line.svg"style="position: absolute; left: 676px; top: 260px"/>
 				<div class="box">
 					<h3 class="center">Directive</h3>
 					<hr noshade/>
@@ -542,8 +650,9 @@ angular.module('solar', [])
 					</span>
 				</div>
 			</div>
-			<div id="example-6-ddef-box" class="step clarify" data-x="2400" data-y="7200" data-z="1290" data-scale=".3" data-rotate-y="-90">
-				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+			<div id="example-6-ddef-box" class="step clarify" data-x="4050" data-y="7100" data-z="1290" data-scale=".3" data-rotate-y="-90">
+				<img src="img/line.svg"style="position: absolute; left: 676px; top: 260px"/>
+				<img src="img/short-line.svg" style="position: absolute; left: 450px; top: 504px; width: 480px" />
 				<div class="box">
 					<h3 class="center">Dir Def</h3>
 					<hr noshade/>
@@ -555,8 +664,8 @@ angular.module('solar', [])
 					</span>
 				</div>
 			</div>
-			<div id="example-6-link-box" class="step clarify" data-x="2400" data-y="7200" data-z="1460" data-scale=".3" data-rotate-y="-90">
-				<img src="img/straight-arrow.svg"style="position: absolute; left: 674px; top: 260px"/>
+			<div id="example-6-link-1-box" class="step clarify" data-x="4050" data-y="7100" data-z="1460" data-scale=".3" data-rotate-y="-90">
+				<img src="img/line.svg"style="position: absolute; left: 676px; top: 260px"/>
 				<div class="box">
 					<h3 class="center">Link Fn</h3>
 					<hr noshade/>
@@ -569,13 +678,42 @@ angular.module('solar', [])
 					</span>
 					<hr noshade/>
 					<span class="small">
-						<div class="code">$scope.$watch(attr, fn)</div>
+						<div class="code">$scope.$watch(exp, fn, eq)</div>
 					</span>
 				</div>
 			</div>
-			<div id="example-6-watch-box" class="step clarify" data-x="2400" data-y="7200" data-z="1630" data-scale=".3" data-rotate-y="-90">
+			<div id="example-6-watch-box" class="step clarify" data-x="4050" data-y="7100" data-z="1630" data-scale=".3" data-rotate-y="-90">
 				<div class="box">
 					<h3 class="center">Watch Fn</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">newValue</div>
+						<div class="code">oldValue</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-6-link-2-box" class="step clarify" data-x="4050" data-y="7300" data-z="1460" data-scale=".3" data-rotate-y="-90">
+				<img src="img/line.svg"style="position: absolute; left: 676px; top: 260px"/>
+				<div class="box">
+					<h3 class="center">Link Fn</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">scope</div>
+						<div class="code">element</div>
+						<div class="code">attributes</div>
+						<div class="code">controller</div>
+					</span>
+					<hr noshade/>
+					<span class="small">
+						<div class="code">attrs.$observe(attr, fn)</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-6-observe-box" class="step clarify" data-x="4050" data-y="7300" data-z="1630" data-scale=".3" data-rotate-y="-90" data-onenter="endExample6">
+				<div class="box">
+					<h3 class="center">Attr Observe Fn</h3>
 					<hr noshade/>
 					<span class="small">
 						<div class="meta">@param</div>
@@ -586,14 +724,14 @@ angular.module('solar', [])
 			
 
 
-<!-- Example 2 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
+<!-- Example 7 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-->
 
-			<div class="step" data-x="-550" data-y="8400" data-z="-100" data-rotate-y="-60">
+			<div class="step invisible" data-x="-550" data-y="8400" data-z="-100" data-rotate-y="-60">
 				<h2>Directive:</h2>
 				<h4>Transclusion</h4>
 			</div>
 
-			<div class="step" data-x="50" data-y="8400" data-z="-100">
+			<div class="step clarify" data-x="50" data-y="8400" data-z="-100" data-onenter="startExample7">
 <pre class='prettyprint lang-html'>
 &lt;html ng-app="solar"&gt;
 	&lt;head&gt;
@@ -604,8 +742,8 @@ angular.module('solar', [])
 	&lt;/head&gt;
 	&lt;body ng-controller="Ctrl7"&gt;
 	 
-		&lt;solararray height="26" width="36"&gt;
-			&lt;panel part="part"/&gt;
+		&lt;solararray height="{{height}}" width="{{width}}"&gt;
+			&lt;panel part="item"/&gt;
 		&lt;/solararray&gt;
 	 
 	&lt;/body&gt;
@@ -613,17 +751,27 @@ angular.module('solar', [])
 </pre>			
 			</div>
 
-			<div class="step" data-x="850" data-y="8400" data-z="-100">
+			<div class="step invisible" data-x="50" data-y="8400" data-z="-100">
+				<div class="focus-box" style="width: 760px; height: 130px; position: absolute; left: 130px; top: 76px;"></div> 
+			</div>
+
+			<div class="step invisible" data-x="1050" data-y="8400" data-z="-100">
+				<iframe height="600px" width="800px" src="example-7.html"></iframe>
+			</div>
+
+			<div class="step clarify" data-x="2050" data-y="8400" data-z="-100">
 <pre class='prettyprint lang-js'>
-function Ctrl7($scope, parts) {
-	$scope.part = parts[2];
+function Ctrl7($scope, partList) {
+	$scope.item = partList[2];
+	$scope.height = 24;
+	$scope.width = 36;
 }
 </pre>
 			</div>
 			
-			<div class="step" data-x="1650" data-y="8400" data-z="-100">
+			<div class="step clarify" data-x="3050" data-y="8400" data-z="-100">
 <pre class='prettyprint lang-js x-small'>
-	.factory('parts', function() {
+	.factory('partList', function() {
 		return [
 			{
 				type: 'panel',
@@ -654,9 +802,9 @@ function Ctrl7($scope, parts) {
 </pre>
 			</div>
 			
-			<div class="step" data-x="2450" data-y="8400" data-z="-100">
+			<div class="step clarify" data-x="4050" data-y="8400" data-z="-100">
 <pre class='prettyprint lang-js x-small'>
-	.directive('panel', ['$timeout', 'parts', function($timeout, parts) {
+	.directive('panel', ['$timeout', function($timeout) {
 		var directiveDef = {
 			restrict: 'E',
 			replace: true,
@@ -678,42 +826,42 @@ function Ctrl7($scope, parts) {
 </pre>
 			</div>
 			
-			<div class="step" data-x="3650" data-y="8400" data-z="-100">
-<pre class='prettyprint lang-js xxx-small'>
+			<div class="step clarify skip" data-x="5550" data-y="8400" data-z="-100" data-scale="0.25">
+<pre class='prettyprint lang-js'>
 	.directive('solararray', function() {
 		var directiveDef = {
-
 			restrict: 'E',
 			replace: true,
-			template: '<div class="array"/>',
+			template: '&lt;div class="array"/&gt;',
 			transclude: true,
 			compile: function(tElement, tAttrs, transcludeFn) {
 				return function($scope, iElement, iAttrs, ctrl) {
 					var h, w, panelDims;
 
-					$scope.$watch(tAttrs.height, function(value) {
+					iAttrs.$observe('height', function(value) {
 						h = value;
 						if (h && w) update(h, w);
 					});
 
-					$scope.$watch(tAttrs.width, function(value) {
+					iAttrs.$observe('width', function(value) {
 						w = value;
 						if (h && w) update(h, w);
 					});
 
 
 					function update(h, w) {
+						panelDims = false;
 						iElement.css('height', (h * 20) + 'px');
 						iElement.css('width', (w * 20) + 'px');
 
 						// Create one to get size
-      					var panel_scope = $scope.$new();
-      					transcludeFn(panel_scope, function(clone) {
-      						iElement.append(stripWhitespace(clone));
-      					});
+						var panel_scope = $scope.$new();
+						transcludeFn(panel_scope, function(clone) {
+							iElement.append(stripWhitespace(clone));
+						});
 					}
 
-      				// Just grab the panel element not the whitespace
+					// Just grab the panel element not the whitespace
 					function stripWhitespace($el) {
   						for (var i = 0; i < $el.length; i++) {
   							if ($el[i].className && 
@@ -736,7 +884,7 @@ function Ctrl7($scope, parts) {
 						console.log(count);
 						iElement.css('padding', (vPad * 20) + 'px 0 0 ' + (hPad * 20) + 'px');
 
-						for (var i = 1; i < count; i++) {
+						for (var i = 0; i < count; i++) {
 							var panel_scope = $scope.$new();
 							transcludeFn(panel_scope, function(clone) {
 								iElement.append(stripWhitespace(clone));
@@ -749,12 +897,13 @@ function Ctrl7($scope, parts) {
 						});
 					}
 
-					// Calculate how many will fit
+					// On notification of panel size change - reload
 					$scope.$on('panel:value-change', function(e) {
 						var pDims = e.targetScope.part.dimensions;
 						if (!panelDims || 
 								panelDims.height != pDims.height || 
 								panelDims.width != pDims.width) {
+							iElement.children().remove();
 							calculatePanelCount(pDims);
 						}
 					});
@@ -765,47 +914,251 @@ function Ctrl7($scope, parts) {
 	})
 </pre>
 			</div>
+
+			<div class="step clarify" data-x="5550" data-y="8400" data-z="-100" data-onenter="dark"></div>
+
+			<div class="step invisible" data-x="5550" data-y="8150" data-z="-100" data-scale="0.25">
+				<div class="focus-box" style="width: 760px; height: 130px; position: absolute; left: 170px; top: -156px;"></div> 
+			</div>
 			
+			<div class="step invisible" data-x="5550" data-y="8180" data-z="-100" data-scale="0.25">
+				<div class="focus-box" style="width: 650px; height: 360px; position: absolute; left: 270px; top: -126px;"></div> 
+			</div>
+			
+			<div class="step invisible" data-x="50" data-y="8400" data-z="-100">
+				<div class="focus-box" style="width: 760px; height: 130px; position: absolute; left: 130px; top: 76px;"></div> 
+			</div>
+
+			<div class="step invisible" data-x="5550" data-y="8180" data-z="-100" data-scale="0.25">
+				<div class="focus-box" style="width: 650px; height: 360px; position: absolute; left: 270px; top: -126px;"></div> 
+			</div>
+			
+			<div class="step invisible" data-x="5550" data-y="8300" data-z="-100" data-scale="0.25">
+				<div class="focus-box" style="width: 690px; height: 220px; position: absolute; left: 330px; top: -106px;"></div> 
+			</div>
+
+			<div class="step invisible" data-x="5550" data-y="8540" data-z="-100" data-scale="0.25">
+				<div class="focus-box" style="width: 750px; height: 260px; position: absolute; left: 330px; top: -106px;"></div> 
+			</div>
+			
+			<div class="step invisible" data-x="5550" data-y="8650" data-z="-100" data-scale="0.25">
+				<div class="focus-box" style="width: 800px; height: 360px; position: absolute; left: 280px; top: -106px;"></div> 
+			</div>
+			
+			<div id="example-7-layout" class="step invisible" data-x="7050" data-y="8400" data-z="1300" data-rotate-y="-90" data-onenter="startExample7boxes"></div>
+
+			<div id="example-7-module-box" class="step invisible" data-x="7050" data-y="8300" data-z="950" data-scale=".25" data-rotate-y="-90">
+				<img src="img/line.svg"style="position: absolute; left: 674px; top: 272px"/>
+				<div class="box">
+					<h3 class="center">Module</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">name</div>
+						<div class="meta">@return</div>
+						<div class="code">object: module</div>
+					</span>
+					<hr noshade/>
+					<span class="small">
+						<div class="code">directive(name, fn)</div>
+						<div class="code">...</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-7-directive-box" class="step invisible" data-x="7050" data-y="8300" data-z="1075" data-scale=".25" data-rotate-y="-90">
+				<img src="img/line.svg"style="position: absolute; left: 674px; top: 272px"/>
+				<img src="img/long-line.svg"style="position: absolute; left: 450px; top: 504px;" />
+				<div class="box">
+					<h3 class="center">Directive</h3>
+					<hr noshade/>
+					<span class="med">
+						<div class="meta">@param</div>
+						<div class="code">&lt;injectables&gt;</div>
+						<div class="meta">@return</div>
+						<div class="code">object: Dir Def</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-7-ddef-box" class="step invisible" data-x="7050" data-y="8300" data-z="1200" data-scale=".25" data-rotate-y="-90">
+				<img src="img/line.svg"style="position: absolute; left: 674px; top: 272px"/>
+				<img src="img/short-line.svg"style="position: absolute; left: 450px; top: 504px;" />
+				<div class="box">
+					<h3 class="center">Dir Def</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="code">restrict: 'E'</div>
+						<div class="code">replace: true</div>
+						<div class="code">template: '&lt;div/&gt;'</div>
+						<div class="code">compile: fn</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-7-compile-box" class="step invisible" data-x="7050" data-y="8300" data-z="1325" data-scale=".25" data-rotate-y="-90">
+				<img src="img/line.svg"style="position: absolute; left: 674px; top: 272px"/>
+				<img src="img/short-line.svg"style="position: absolute; left: 450px; top: 504px;" />
+				<div class="box">
+					<h3 class="center">Compile Fn</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">object: element</div>
+						<div class="code">object: attributes</div>
+						<div class="code">function: transclude</div>
+						<div class="meta">@return</div>
+						<div class="code">function: Link</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-7-transclude-box" class="step invisible" data-x="7050" data-y="8300" data-z="1450" data-scale=".25" data-rotate-y="-90">
+				<img src="img/line.svg"style="position: absolute; left: 674px; top: 272px"/>
+				<div class="box">
+					<h3 class="center">Transclude Fn</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">object: scope</div>
+						<div class="code">function: clone</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-7-clone-box" class="step invisible" data-x="7050" data-y="8300" data-z="1575" data-scale=".25" data-rotate-y="-90">
+				<div class="box">
+					<h3 class="center">Clone Fn</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">object: clone (el)</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-7-link-1-box" class="step invisible" data-x="7050" data-y="8425" data-z="1450" data-scale=".25" data-rotate-y="-90">
+				<img src="img/line.svg"style="position: absolute; left: 674px; top: 272px"/>
+				<img src="img/short-line.svg"style="position: absolute; left: 450px; top: 504px;" />
+				<div class="box">
+					<h3 class="center">Link Fn</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">object: scope</div>
+						<div class="code">object: element</div>
+						<div class="code">object: attributes</div>
+						<div class="code">object: controller</div>
+					</span>
+					<hr noshade/>
+					<span class="small">
+						<div class="code">$scope.$watch()</div>
+						<div class="code">attrs.$observe()</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-7-watch-box" class="step invisible" data-x="7050" data-y="8425" data-z="1575" data-scale=".25" data-rotate-y="-90">
+				<div class="box">
+					<h3 class="center">Watch Fn</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">newValue</div>
+						<div class="code">oldValue</div>
+					</span>
+				</div>
+			</div>
+			<div id="example-7-observe-box" class="step invisible" data-x="7050" data-y="8550" data-z="1575" data-scale=".25" data-rotate-y="-90">
+				<div class="box">
+					<h3 class="center">Attr Observe Fn</h3>
+					<hr noshade/>
+					<span class="small">
+						<div class="meta">@param</div>
+						<div class="code">value</div>
+					</span>
+				</div>
+			</div>
+
+			<div class="step invisible" data-x="50" data-y="80" data-z="-100" data-onenter="endExample7"></div>
+			<div class="step invisible" data-x="50" data-y="8400" data-z="-100">
+				<div class="focus-box" style="width: 760px; height: 130px; position: absolute; left: 130px; top: 76px;"></div> 
+			</div>
+			<div class="step invisible" data-x="2050" data-y="8400" data-z="-100"></div>
+
 			<div class="step" data-x="-550" data-y="9600" data-z="-100" data-rotate-y="-60">
-				<h2>That's All!</h2>
-				<h4>I ran out of time :(</h4>
+				<h5>Thanks for coming!</h5>
+				<br/><br/><br/>
+				<h4>Thomas A. Valletta</h4>
+				<h4 class="code">@tvalletta</h4>
 			</div>
 
 
- 			<div class="step invisible center" data-x="0" data-y="-1200" data-z="0">
-			</div>
-
-			<div class="step clarify" data-x="-3500" data-y="-1150" data-z="-2500">
+			<!-- Title Graphics -->
+			<div class="step clarify skip" data-x="-3500" data-y="-1150" data-z="-2500">
 			    <img src="img/sunray-grad.svg" style="width: 1000%; height: 1000%; opacity: 0.25; "/>
 			</div>
-			<div class="step clarify" data-x="-950" data-y="-1200" data-z="-700">
+			<div class="step clarify skip" data-x="-950" data-y="-1200" data-z="-700">
 			    <img src="img/cloud-02b.svg" style="width: 250%; height: 250%; "/>
 			</div>
-			<div class="step clarify" data-x="-350" data-y="-1000" data-z="-100">
+			<div class="step clarify skip" data-x="-350" data-y="-1000" data-z="-100">
 			    <img src="img/cloud-03b.svg" style="width: 140%; height: 140%"/>
 			</div>
-			<div class="step center clarify" data-x="-200" data-y="-900" data-z="-100">
+			<div class="step center clarify skip" data-x="-200" data-y="-900" data-z="-100">
 			    <h3>
 			    	<span style="color: #77CBF8; font-weight: bold;">Directives:</span>
 			     	<span style="color: #000">A Deep Dive</span></h3>
 			    <p style="font-size: 22px">Thomas A. Valletta - @tvalletta</p>
 			</div>
 
-			<div class="step clarify" data-x="-200" data-y="10" data-z="-101">
+			<div class="step clarify skip" data-x="-200" data-y="10" data-z="-101">
 				<img src="img/cloud-03b.svg" style="width: 160%; height: 160%"/>
 			</div>
 
 			<!-- First dark cloud behind step-4 -->
-			<div id="cloud-4-1" class="step invisible" data-x="2000" data-y="5100" data-z="-700">
+			<div id="cloud-4-1" class="step invisible skip" data-x="2000" data-y="5100" data-z="-700">
 			    <img src="img/cloud-01bd.svg" style="width: 100%; height: 100%; "/>
 			</div>
-			<div id="cloud-4-2" class="step invisible" data-x="2300" data-y="5100" data-z="-1400">
+			<div id="cloud-4-2" class="step invisible skip" data-x="2300" data-y="5100" data-z="-1400">
 			    <img src="img/cloud-02bd.svg" style="width: 150%; height: 150%; "/>
+			</div>
+			<div id="cloud-4-3" class="step invisible skip" data-x="4000" data-y="5100" data-z="-2800">
+			    <img src="img/cloud-03bd.svg" style="width: 200%; height: 200%; "/>
 			</div>
 
 			<!-- First dark cloud behind step-5 -->
-			<div class="step invisible" data-x="2000" data-y="5100" data-z="-700">
+			<div id="cloud-5-1" class="step invisible skip" data-x="2000" data-y="6300" data-z="-700">
 			    <img src="img/cloud-01bd.svg" style="width: 100%; height: 100%; "/>
+			</div>
+			<div id="cloud-5-2" class="step invisible skip" data-x="2300" data-y="6300" data-z="-1400">
+			    <img src="img/cloud-03bd.svg" style="width: 150%; height: 150%; "/>
+			</div>
+			<div id="cloud-5-3" class="step invisible skip" data-x="4000" data-y="6300" data-z="-2800">
+			    <img src="img/cloud-02bd.svg" style="width: 200%; height: 200%; "/>
+			</div>
+			<div id="cloud-5-4" class="step invisible skip" data-x="3800" data-y="5800" data-z="-4000">
+			    <img src="img/cloud-01bd.svg" style="width: 500%; height: 500%; "/>
+			</div>
+
+			<!-- First dark cloud behind step-6 -->
+			<div id="cloud-6-1" class="step invisible skip" data-x="2000" data-y="7500" data-z="-700">
+			    <img src="img/cloud-03bd.svg" style="width: 100%; height: 100%; "/>
+			</div>
+			<div id="cloud-6-2" class="step invisible skip" data-x="2300" data-y="7500" data-z="-1400">
+			    <img src="img/cloud-01bd.svg" style="width: 150%; height: 150%; "/>
+			</div>
+			<div id="cloud-6-3" class="step invisible skip" data-x="4000" data-y="7500" data-z="-2800">
+			    <img src="img/cloud-02bd.svg" style="width: 200%; height: 200%; "/>
+			</div>
+			<div id="cloud-6-4" class="step invisible skip" data-x="3800" data-y="5800" data-z="-4000">
+			    <img src="img/cloud-03bd.svg" style="width: 500%; height: 500%; "/>
+			</div>
+
+			<!-- Stuff for example 7 -->
+			<div id="cloud-7-1" class="step invisible skip" data-x="2000" data-y="8700" data-z="-700">
+			    <img src="img/cloud-01br.svg" style="width: 100%; height: 100%; "/>
+			</div>
+			<div id="cloud-7-2" class="step invisible skip" data-x="2300" data-y="8700" data-z="-1400">
+			    <img src="img/cloud-02br.svg" style="width: 150%; height: 150%; "/>
+			</div>
+			<div id="cloud-7-3" class="step invisible skip" data-x="4000" data-y="8700" data-z="-2800">
+			    <img src="img/cloud-03br.svg" style="width: 200%; height: 200%; "/>
+			</div>
+			<div id="cloud-7-4" class="step invisible skip" data-x="3800" data-y="7000" data-z="-4000">
+			    <img src="img/cloud-02br.svg" style="width: 500%; height: 500%; "/>
 			</div>
 
 		</div>
@@ -884,9 +1237,74 @@ function Ctrl7($scope, parts) {
 			$help.removeClass('show');
     	}
 
-    	function showExample4() {
-    		$('#cloud-4-1, #cloud-4-2').addClass('clarify');
+    	function cloudy() {
+    		setTimeout(function() {
+	    		$('body').addClass('cloudy');
+    		}, 1);
     	}
+
+    	function dark() {
+    		setTimeout(function() {
+	    		$('body').addClass('dark').removeClass('cloudy');
+    		}, 1);
+    	}
+
+    	function startExample4() {
+    		setTimeout(function() {
+	    		$('#cloud-4-1, #cloud-4-2, #cloud-4-3').addClass('clarify');
+    		}, 1);
+    	}
+
+    	function endExample4() {
+    		setTimeout(function() {
+
+    		}, 1);
+    	}
+
+    	function startExample5() {
+    		setTimeout(function() {
+	    		$('#cloud-5-1, #cloud-5-2, #cloud-5-3, #cloud-5-4').addClass('clarify');
+    		}, 1);
+    	}
+
+    	function endExample5() {
+    		setTimeout(function() {
+
+    		}, 1);
+    	}
+
+    	function startExample6() {
+    		setTimeout(function() {
+	    		$('#cloud-6-1, #cloud-6-2, #cloud-6-3, #cloud-6-4').addClass('clarify');
+    		}, 1);
+    	}
+
+    	function endExample6() {
+    		setTimeout(function() {
+
+    		}, 1);
+    	}
+
+    	function startExample7() {
+    		setTimeout(function() {
+	    		dark();
+	    		$('#cloud-7-1, #cloud-7-2, #cloud-7-3, #cloud-7-4').addClass('clarify');
+    		}, 1);
+    	}
+
+    	function startExample7boxes() {
+    		setTimeout(function() {
+	    		$('#example-7-module-box, #example-7-directive-box, #example-7-ddef-box, #example-7-compile-box, #example-7-transclude-box, #example-7-clone-box, #example-7-link-1-box, #example-7-watch-box, #example-7-observe-box').addClass('clarify');
+    		}, 1);
+    	}
+
+    	function endExample7() {
+    		setTimeout(function() {
+	    		$('#example-7-module-box, #example-7-directive-box, #example-7-ddef-box, #example-7-compile-box, #example-7-transclude-box, #example-7-clone-box, #example-7-link-1-box, #example-7-watch-box, #example-7-observe-box').removeClass('clarify');
+	    		$('body').removeClass('cloudy').removeClass('dark');
+    		}, 1);
+    	}
+
     </script>
     </body>
 </html>

@@ -56,6 +56,12 @@ body {
     background:     -ms-radial-gradient(rgb(215, 240, 254), rgb(116, 204, 251));
     background:      -o-radial-gradient(rgb(215, 240, 254), rgb(116, 204, 251));
     background:         radial-gradient(rgb(215, 240, 254), rgb(116, 204, 251));    
+
+    -webkit-transition: 1s linear;
+    -moz-transition:    1s linear;
+    -o-transition:      1s linear;
+    -ms-transition:     1s linear;
+    transition:         1s linear;
 }
 
 b, strong { font-weight: bold }

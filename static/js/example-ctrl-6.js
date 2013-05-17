@@ -17,6 +17,15 @@ function Ctrl6($scope) {
 			supplier: 'Enphase'
 		}
 	];
+	$scope.addPart = function() {
+		$scope.partList.push({
+			type: 'panel',
+			supplier: 'Random'
+		});
+	}
+	$scope.changeType = function() {
+		$scope.partList[0].type = 'inverter';
+	}
 }
 
 angular.module('solar', [])
@@ -27,11 +36,11 @@ angular.module('solar', [])
 			template: '<img/>',
 			link: function(scope, el, attrs) {
 				function updateSrc(value) {
-					el[0].src = 'img/' + value.part + '/' + value.supplier + '.svg';
+					el.attr('src', 'img/' + value + '.svg');
 				}
 
-				scope.$watch(attrs.part, function(value) {
-					updateSrc(value);
+				scope.$watch('item.type', function(newValue, oldValue) {
+					updateSrc(newValue);
 				});
 			}
 		}

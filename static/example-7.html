@@ -7,8 +7,11 @@
 	</head>
 	<body ng-controller="Ctrl7">
 	 
-		<solararray height="26" width="36">
-			<panel part="part"/>
+	 	<button ng-click="changeHeight()">Height</button>
+	 	<button ng-click="changeWidth()">Width</button>
+	 	<button ng-click="changePanel()">Panel</button>
+		<solararray height="{{height}}" width="{{width}}">
+			<panel part="item"/>
 		</solararray>
 	 
 	</body>
