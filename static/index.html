@@ -918,31 +918,31 @@ function Ctrl7($scope, partList) {
 			<div class="step clarify" data-x="5550" data-y="8400" data-z="-100" data-onenter="dark"></div>
 
 			<div class="step invisible" data-x="5550" data-y="8150" data-z="-100" data-scale="0.25">
-				<div class="focus-box" style="width: 760px; height: 130px; position: absolute; left: 170px; top: -156px;"></div> 
+				<div class="focus-box-2" style="width: 760px; height: 130px; position: absolute; left: 170px; top: -156px;"></div> 
 			</div>
 			
 			<div class="step invisible" data-x="5550" data-y="8180" data-z="-100" data-scale="0.25">
-				<div class="focus-box" style="width: 650px; height: 360px; position: absolute; left: 270px; top: -126px;"></div> 
+				<div class="focus-box-2" style="width: 650px; height: 360px; position: absolute; left: 270px; top: -126px;"></div> 
 			</div>
 			
 			<div class="step invisible" data-x="50" data-y="8400" data-z="-100">
-				<div class="focus-box" style="width: 760px; height: 130px; position: absolute; left: 130px; top: 76px;"></div> 
+				<div class="focus-box-2" style="width: 760px; height: 130px; position: absolute; left: 130px; top: 76px;"></div> 
 			</div>
 
 			<div class="step invisible" data-x="5550" data-y="8180" data-z="-100" data-scale="0.25">
-				<div class="focus-box" style="width: 650px; height: 360px; position: absolute; left: 270px; top: -126px;"></div> 
+				<div class="focus-box-2" style="width: 650px; height: 360px; position: absolute; left: 270px; top: -126px;"></div> 
 			</div>
 			
 			<div class="step invisible" data-x="5550" data-y="8300" data-z="-100" data-scale="0.25">
-				<div class="focus-box" style="width: 690px; height: 220px; position: absolute; left: 330px; top: -106px;"></div> 
+				<div class="focus-box-2" style="width: 690px; height: 220px; position: absolute; left: 330px; top: -106px;"></div> 
 			</div>
 
 			<div class="step invisible" data-x="5550" data-y="8540" data-z="-100" data-scale="0.25">
-				<div class="focus-box" style="width: 750px; height: 260px; position: absolute; left: 330px; top: -106px;"></div> 
+				<div class="focus-box-2" style="width: 750px; height: 260px; position: absolute; left: 330px; top: -106px;"></div> 
 			</div>
 			
 			<div class="step invisible" data-x="5550" data-y="8650" data-z="-100" data-scale="0.25">
-				<div class="focus-box" style="width: 800px; height: 360px; position: absolute; left: 280px; top: -106px;"></div> 
+				<div class="focus-box-2" style="width: 800px; height: 360px; position: absolute; left: 280px; top: -106px;"></div> 
 			</div>
 			
 			<div id="example-7-layout" class="step invisible" data-x="7050" data-y="8400" data-z="1300" data-rotate-y="-90" data-onenter="startExample7boxes"></div>
@@ -1075,7 +1075,7 @@ function Ctrl7($scope, partList) {
 
 			<div class="step invisible" data-x="50" data-y="80" data-z="-100" data-onenter="endExample7"></div>
 			<div class="step invisible" data-x="50" data-y="8400" data-z="-100">
-				<div class="focus-box" style="width: 760px; height: 130px; position: absolute; left: 130px; top: 76px;"></div> 
+				<div class="focus-box-2" style="width: 760px; height: 130px; position: absolute; left: 130px; top: 76px;"></div> 
 			</div>
 			<div class="step invisible" data-x="2050" data-y="8400" data-z="-100"></div>
 
@@ -1156,9 +1156,6 @@ function Ctrl7($scope, partList) {
 			</div>
 			<div id="cloud-7-3" class="step invisible skip" data-x="4000" data-y="8700" data-z="-2800">
 			    <img src="img/cloud-03br.svg" style="width: 200%; height: 200%; "/>
-			</div>
-			<div id="cloud-7-4" class="step invisible skip" data-x="3800" data-y="7000" data-z="-4000">
-			    <img src="img/cloud-02br.svg" style="width: 500%; height: 500%; "/>
 			</div>
 
 		</div>
@@ -1288,7 +1285,7 @@ function Ctrl7($scope, partList) {
     	function startExample7() {
     		setTimeout(function() {
 	    		dark();
-	    		$('#cloud-7-1, #cloud-7-2, #cloud-7-3, #cloud-7-4').addClass('clarify');
+	    		$('#cloud-7-1, #cloud-7-2, #cloud-7-3').addClass('clarify');
     		}, 1);
     	}
 

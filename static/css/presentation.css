@@ -45,8 +45,14 @@ body.dark {
 
 pre 	{font-size: 28px; line-height: 32px; font-family: Junction;}
 
-.focus-box {
+.focus-box-old {
 	border-radius: 33px;
 	box-shadow: 0 0 0 10000px #fff;
+	opacity: 0.6;
+}
+
+.focus-box, .focus-box-2 {
+	border-radius: 33px;
+	outline: 20px solid #fff;
 	opacity: 0.6;
 }
